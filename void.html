@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VOID — Charte Graphique · Hervé KAKPO</title>
+  <meta name="description" content="Étude de cas : création complète de l'identité visuelle VOID — logo, palette, typographies, templates et guide de marque." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* VOID-specific extras */
+    .void-section { padding: var(--sp-9) var(--sp-7); }
+    .void-section .section__inner { max-width: 1200px; margin: 0 auto; }
+
+    .typo-display {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--clr-text);
+      padding: var(--sp-5) 0;
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .typo-body {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      color: var(--clr-muted);
+      padding: var(--sp-4) 0;
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .typo-mono {
+      font-family: var(--font-mono);
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+      color: var(--clr-accent-2);
+      padding: var(--sp-4) 0;
+    }
+
+    .do-dont {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-4);
+    }
+    .do-card, .dont-card {
+      padding: var(--sp-5);
+      border-radius: var(--r-lg);
+      border: 1px solid;
+    }
+    .do-card   { border-color: rgba(0,229,200,0.3); background: rgba(0,229,200,0.05); }
+    .dont-card { border-color: rgba(255,95,143,0.3); background: rgba(255,95,143,0.05); }
+    .do-card .label   { color: var(--clr-accent-2); font-weight: 700; margin-bottom: var(--sp-3); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    .dont-card .label { color: var(--clr-accent-3); font-weight: 700; margin-bottom: var(--sp-3); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+    .do-dont li {
+      font-size: 0.875rem;
+      color: var(--clr-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-2);
+      margin-bottom: var(--sp-2);
+    }
+    .do-card li::before   { content: '✓'; color: var(--clr-accent-2); flex-shrink: 0; }
+    .dont-card li::before { content: '✗'; color: var(--clr-accent-3); flex-shrink: 0; }
+
+    .mockup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--sp-4);
+    }
+    .mockup-item {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      transition: all var(--t-med) var(--ease);
+    }
+    .mockup-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-glow); }
+    .mockup-screen {
+      aspect-ratio: 9/16;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--clr-muted);
+      position: relative;
+      overflow: hidden;
+    }
+    .mockup-label {
+      padding: var(--sp-3) var(--sp-4);
+      font-size: 0.8rem;
+      color: var(--clr-muted);
+      border-top: 1px solid var(--clr-border);
+    }
+    .brand-word {
+      display: inline-flex;
+      padding: var(--sp-3) var(--sp-5);
+      border-radius: var(--r-md);
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: var(--sp-2);
+    }
+
+    @media(max-width:768px){
+      .void-section { padding: var(--sp-7) var(--sp-5); }
+      .do-dont { grid-template-columns: 1fr; }
+      .palette { gap: var(--sp-2); }
+      .palette__color { width: 60px; height: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav" id="navbar">
+  <a href="index.html" class="nav__logo">HK<span>.</span></a>
+  <ul class="nav__links">
+    <li><a href="index.html" class="nav__link">Accueil</a></li>
+    <li><a href="projets.html" class="nav__link">Projets</a></li>
+    <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+    <li><a href="contact.html" class="nav__link nav__cta">Me contacter</a></li>
+  </ul>
+  <button class="nav__burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ========== VOID HERO ========== -->
+<section class="void-hero">
+  <div class="void-logo-display">VOID</div>
+  <div class="void-hero__content">
+    <div class="hero__tag" style="margin:0 auto var(--sp-5);">Étude de cas #01</div>
+    <h1 class="hero__name" style="font-size: clamp(4rem,12vw,10rem); text-align:center;">
+      <span style="color:#C9915A;">VOID</span>
+    </h1>
+    <p style="font-size:1.1rem; color:var(--clr-muted); margin-top:var(--sp-3);">Direction artistique complète · Identité visuelle · Charte graphique</p>
+    <div class="case-header__meta" style="justify-content:center; margin-top:var(--sp-5);">
+      <div class="meta-pill"><svg style="vertical-align: middle; margin-right: 4px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <strong>Durée</strong> 3 semaines</div>
+      <div class="meta-pill"><svg style="vertical-align: middle; margin-right: 4px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg> <strong>Type</strong> Branding complet</div>
+      <div class="meta-pill"><svg style="vertical-align: middle; margin-right: 4px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> <strong>Lieu</strong> Lomé, Togo</div>
+      <div class="meta-pill" style="border-color: rgba(201,145,90,0.4);"><svg style="vertical-align: middle; margin-right: 4px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9915A" stroke-width="1.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> <strong style="color:#C9915A;">6 livrables</strong> validés</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 01 - CONTEXTE ========== -->
+<section class="void-section">
+  <div class="section__inner">
+    <div class="section__label">01 — Le contexte</div>
+    <h2 class="section__title reveal">Quel était<br>le vrai problème ?</h2>
+
+    <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:var(--sp-7); margin-top:var(--sp-6); align-items:start;">
+      <div class="reveal">
+        <p style="font-size:1.05rem; line-height:1.8; color:var(--clr-muted); margin-bottom:var(--sp-4);">
+          VOID est une marque créative émergente qui souhaitait se positionner sur le marché de l'habillage digital premium à Lomé.
+          Ayant travaillé avec Hervé sur des contenus sociaux, le fondateur lui a confié la <strong style="color:var(--clr-text);">direction artistique complète</strong> de la marque : à son lancement, VOID n'avait aucune identité visuelle cohérente — des logos génériques, des couleurs incohérentes et aucune règle d'usage claire.
+        </p>
+        <p style="font-size:1.05rem; line-height:1.8; color:var(--clr-muted);">
+          La mission : créer une charte graphique complète en 3 semaines, <strong style="color:#C9915A;">utilisable de façon autonome</strong> par l'équipe interne sur tous les supports digitaux et imprimés, sans intervention extérieure.
+        </p>
+      </div>
+      <div class="reveal" data-delay="100">
+        <div class="kpis" style="grid-template-columns:1fr 1fr;">
+          <div class="kpi">
+            <div class="kpi__number">0</div>
+            <div class="kpi__label">Identité visuelle existante</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi__number">5+</div>
+            <div class="kpi__label">Supports à unifier</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi__number">3</div>
+            <div class="kpi__label">Semaines de production</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi__number">100%</div>
+            <div class="kpi__label">Livrables validés</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="max-width:1200px;margin:0 auto;padding:0 var(--sp-7);"></div>
+
+<!-- ========== MOODBOARD ========== -->
+<section class="void-section" style="background:var(--clr-surface);">
+  <div class="section__inner">
+    <div class="section__label">Univers de référence</div>
+    <h2 class="section__title reveal">Moodboard &<br>inspirations</h2>
+    <p class="reveal" style="color:var(--clr-muted); margin-bottom:var(--sp-6);" data-delay="100">30+ images analysées. 3 directions visuelles proposées. La direction "Dark Premium" validée.</p>
+
+    <div class="reveal" data-delay="150" style="display:grid; grid-template-columns: repeat(3, 1fr); gap:var(--sp-3);">
+      <!-- Tuile 1 -->
+      <div style="border-radius:var(--r-md); overflow:hidden; position:relative; aspect-ratio:1; background:linear-gradient(135deg,#1E1E24,#2A2A33); display:flex; align-items:center; justify-content:center; border:1px solid var(--clr-border); cursor:pointer; transition:transform 0.3s var(--ease);" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="text-align:center; padding:20px;">
+          <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:#C9915A;">VOID</div>
+          <div style="font-size:0.6rem;color:var(--clr-muted);margin-top:6px;letter-spacing:0.15em;">REF. LOGO DARK</div>
+        </div>
+        <div style="position:absolute;bottom:8px;right:8px;font-size:0.6rem;color:var(--clr-muted);font-family:var(--font-mono);">Réf. #01</div>
+      </div>
+      <!-- Tuile 2 -->
+      <div style="border-radius:var(--r-md); overflow:hidden; position:relative; aspect-ratio:1; background:linear-gradient(45deg,#C9915A,#1E1E24); display:flex; align-items:center; justify-content:center; border:1px solid var(--clr-border); cursor:pointer; transition:transform 0.3s var(--ease);" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="text-align:center; padding:20px;">
+          <div style="font-size:0.6rem;color:rgba(255,255,255,0.7);letter-spacing:0.2em;margin-bottom:8px;">TERRACOTTA ACCENT</div>
+          <div style="width:60px;height:3px;background:#F9F8F6;margin:0 auto;"></div>
+        </div>
+        <div style="position:absolute;bottom:8px;right:8px;font-size:0.6rem;color:rgba(255,255,255,0.5);font-family:var(--font-mono);">Réf. #02</div>
+      </div>
+      <!-- Tuile 3 -->
+      <div style="border-radius:var(--r-md); overflow:hidden; position:relative; aspect-ratio:1; background:#F9F8F6; display:flex; align-items:center; justify-content:center; border:1px solid var(--clr-border); cursor:pointer; transition:transform 0.3s var(--ease);" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="text-align:center; padding:20px;">
+          <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:#1E1E24;">Light<br>Mode</div>
+          <div style="font-size:0.6rem;color:#7A7890;margin-top:6px;letter-spacing:0.1em;">VOID LIGHT</div>
+        </div>
+        <div style="position:absolute;bottom:8px;right:8px;font-size:0.6rem;color:#7A7890;font-family:var(--font-mono);">Réf. #03</div>
+      </div>
+      <!-- Tuile 4 -->
+      <div style="border-radius:var(--r-md); grid-column: span 2; overflow:hidden; position:relative; aspect-ratio:2/1; background:#2A2A33; display:flex; align-items:center; justify-content:center; border:1px solid var(--clr-border); cursor:pointer; transition:transform 0.3s var(--ease);" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="display:flex;gap:40px;align-items:center;">
+          <div style="text-align:center;"><div style="width:50px;height:50px;background:#C9915A;border-radius:50%;"></div><div style="font-size:0.55rem;color:var(--clr-muted);margin-top:6px;">#C9915A</div></div>
+          <div style="text-align:center;"><div style="width:50px;height:50px;background:#1E1E24;border-radius:50%;border:1px solid rgba(255,255,255,0.1);"></div><div style="font-size:0.55rem;color:var(--clr-muted);margin-top:6px;">#1E1E24</div></div>
+          <div style="text-align:center;"><div style="width:50px;height:50px;background:#F9F8F6;border-radius:50%;"></div><div style="font-size:0.55rem;color:var(--clr-muted);margin-top:6px;">#F9F8F6</div></div>
+          <div style="text-align:center;"><div style="width:50px;height:50px;background:#7A7890;border-radius:50%;"></div><div style="font-size:0.55rem;color:var(--clr-muted);margin-top:6px;">#7A7890</div></div>
+        </div>
+        <div style="position:absolute;bottom:8px;right:8px;font-size:0.6rem;color:var(--clr-muted);font-family:var(--font-mono);">Palette · Direction validée</div>
+      </div>
+      <!-- Tuile 5 -->
+      <div style="border-radius:var(--r-md); overflow:hidden; position:relative; aspect-ratio:1; background:linear-gradient(160deg,#1E1E24,#2A2A33); display:flex; align-items:center; justify-content:center; border:1px solid rgba(201,145,90,0.3); cursor:pointer; transition:transform 0.3s var(--ease);" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="text-align:center; padding:20px;">
+          <div style="font-family:var(--font-mono);font-size:0.55rem;color:#C9915A;letter-spacing:0.2em;margin-bottom:8px;">TYPOGRAPHIE</div>
+          <div style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#F9F8F6;">Space<br>Grotesk</div>
+        </div>
+        <div style="position:absolute;bottom:8px;right:8px;font-size:0.6rem;color:var(--clr-muted);font-family:var(--font-mono);">Réf. #05</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="max-width:1200px;margin:0 auto;padding:0 var(--sp-7);"></div>
+
+<!-- ========== 02 - DÉMARCHE ========== -->
+<section class="void-section">
+  <div class="section__inner">
+    <div class="section__label">02 — Ma démarche</div>
+    <h2 class="section__title reveal">Comment j'ai<br>travaillé ?</h2>
+
+    <div class="steps" style="margin-top:var(--sp-6);">
+      <div class="step reveal" data-delay="0">
+        <div class="step__number">01</div>
+        <div class="step__label">Benchmark</div>
+        <h3 class="step__title">Audit concurrentiel</h3>
+        <ul class="step__list">
+          <li>Analyse de 12 marques créatives du même secteur</li>
+          <li>Identification des tendances visuelles 2025</li>
+          <li>Détermination du positionnement différenciateur</li>
+        </ul>
+      </div>
+      <div class="step reveal" data-delay="80">
+        <div class="step__number">02</div>
+        <div class="step__label">Inspiration</div>
+        <h3 class="step__title">Moodboard & direction</h3>
+        <ul class="step__list">
+          <li>Constitution d'un moodboard de référence (30+ images)</li>
+          <li>Sélection de 3 directions visuelles à soumettre</li>
+          <li>Validation de la direction "Dark Premium" avec le client</li>
+        </ul>
+      </div>
+      <div class="step reveal" data-delay="160">
+        <div class="step__number">03</div>
+        <div class="step__label">Production</div>
+        <h3 class="step__title">Création des éléments</h3>
+        <ul class="step__list">
+          <li>Logo + déclinaisons (6 versions)</li>
+          <li>Palette officielle avec codes couleur</li>
+          <li>Sélection et règles typographiques</li>
+          <li>Templates Instagram, Stories, LinkedIn</li>
+        </ul>
+      </div>
+      <div class="step reveal" data-delay="240">
+        <div class="step__number">04</div>
+        <div class="step__label">Livraison</div>
+        <h3 class="step__title">Guide de marque complet</h3>
+        <ul class="step__list">
+          <li>Guide PDF 24 pages auto-suffisant</li>
+          <li>Fichiers sources organisés (Canva + Figma)</li>
+          <li>Formation de 2h avec l'équipe interne</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="max-width:1200px;margin:0 auto;padding:0 var(--sp-7);"></div>
+
+<!-- ========== LOGO DÉCLINAISONS ========== -->
+<section class="void-section">
+  <div class="section__inner">
+    <div class="section__label">03 — Livrables · Logo</div>
+    <h2 class="section__title reveal">6 déclinaisons<br>du logo</h2>
+    <p class="reveal" style="color:var(--clr-muted); margin-bottom:var(--sp-6);" data-delay="100">Horizontal, vertical, favicon, monochrome clair, monochrome foncé et version négatif — pour couvrir tous les supports.</p>
+
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:var(--sp-4);" class="reveal" data-delay="150">
+      <div style="background:#1E1E24; border:1px solid rgba(201,145,90,0.2); border-radius:var(--r-md); padding:var(--sp-5); text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:#C9915A;">VOID</div>
+        <div style="font-size:0.55rem;color:#7A7890;margin-top:4px;letter-spacing:0.15em;">HORIZONTAL</div>
+      </div>
+      <div style="background:#1E1E24; border:1px solid rgba(201,145,90,0.2); border-radius:var(--r-md); padding:var(--sp-5); text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:#C9915A;">VOID<br><span style="font-size:0.6rem;color:#7A7890;letter-spacing:0.2em;">STUDIO</span></div>
+        <div style="font-size:0.55rem;color:#7A7890;margin-top:4px;letter-spacing:0.15em;">VERTICAL</div>
+      </div>
+      <div style="background:#1E1E24; border:1px solid rgba(201,145,90,0.2); border-radius:var(--r-md); padding:var(--sp-5); text-align:center;">
+        <div style="width:40px;height:40px;background:#C9915A;border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto;font-family:var(--font-display);font-weight:700;color:#1E1E24;font-size:1.1rem;">V</div>
+        <div style="font-size:0.55rem;color:#7A7890;margin-top:8px;letter-spacing:0.15em;">FAVICON / ICÔNE</div>
+      </div>
+      <div style="background:#F9F8F6; border:1px solid rgba(0,0,0,0.08); border-radius:var(--r-md); padding:var(--sp-5); text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:#1E1E24;">VOID</div>
+        <div style="font-size:0.55rem;color:#7A7890;margin-top:4px;letter-spacing:0.15em;">MONOCHROME CLAIR</div>
+      </div>
+      <div style="background:#2A2A33; border:1px solid rgba(201,145,90,0.2); border-radius:var(--r-md); padding:var(--sp-5); text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:#F9F8F6;">VOID</div>
+        <div style="font-size:0.55rem;color:#7A7890;margin-top:4px;letter-spacing:0.15em;">MONOCHROME FONCÉ</div>
+      </div>
+      <div style="background:linear-gradient(135deg,#C9915A,#1E1E24); border-radius:var(--r-md); padding:var(--sp-5); text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:#F9F8F6;">VOID</div>
+        <div style="font-size:0.55rem;color:rgba(255,255,255,0.7);margin-top:4px;letter-spacing:0.15em;">VERSION NÉGATIF</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="max-width:1200px;margin:0 auto;padding:0 var(--sp-7);"></div>
+
+<!-- ========== ICONOGRAPHIE & GRILLE ========== -->
+<section class="void-section">
+  <div class="section__inner">
+    <div class="section__label">Système de design</div>
+    <h2 class="section__title reveal">Iconographie<br>& grille</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-7); margin-top:var(--sp-6);">
+      <!-- Icones -->
+      <div class="reveal">
+        <div class="section__label" style="margin-bottom:var(--sp-4);">Style iconographique</div>
+        <p style="font-size:0.9rem;color:var(--clr-muted);margin-bottom:var(--sp-4);">Style "stroke" fin (1.5px), coins arrondis, grille 24×24px. Cohérence avec l'univers minimaliste de VOID.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--sp-3);">
+          <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--r-md);padding:var(--sp-3);display:flex;align-items:center;justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9915A" stroke-width="1.5" stroke-linecap="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--r-md);padding:var(--sp-3);display:flex;align-items:center;justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9915A" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+          </div>
+          <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--r-md);padding:var(--sp-3);display:flex;align-items:center;justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9915A" stroke-width="1.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--r-md);padding:var(--sp-3);display:flex;align-items:center;justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9915A" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+        </div>
+      </div>
+      <!-- Grille -->
+      <div class="reveal" data-delay="100">
+        <div class="section__label" style="margin-bottom:var(--sp-4);">Grille & espacement</div>
+        <p style="font-size:0.9rem;color:var(--clr-muted);margin-bottom:var(--sp-4);">Système 8pt. Colonne principale 12 colonnes, gouttières 24px. Marges extérieures : 32px mobile, 64px desktop.</p>
+        <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--r-md);padding:var(--sp-4);">
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+            <div style="background:rgba(201,145,90,0.15);border:1px solid rgba(201,145,90,0.3);border-radius:4px;height:32px;"></div>
+            <div style="background:rgba(201,145,90,0.15);border:1px solid rgba(201,145,90,0.3);border-radius:4px;height:32px;"></div>
+            <div style="background:rgba(201,145,90,0.15);border:1px solid rgba(201,145,90,0.3);border-radius:4px;height:32px;"></div>
+            <div style="background:rgba(201,145,90,0.15);border:1px solid rgba(201,145,90,0.3);border-radius:4px;height:32px;"></div>
+          </div>
+          <div style="font-family:var(--font-mono);font-size:0.55rem;color:var(--clr-muted);margin-top:8px;text-align:center;letter-spacing:0.1em;">GRILLE 4 COL · GOUTTIÈRES 8PX</div>
+        </div>
+        <div style="margin-top:var(--sp-3);display:flex;gap:var(--sp-2);flex-wrap:wrap;">
+          <span style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:4px;padding:4px 10px;font-size:0.7rem;font-family:var(--font-mono);color:var(--clr-muted);">Base: 8px</span>
+          <span style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:4px;padding:4px 10px;font-size:0.7rem;font-family:var(--font-mono);color:var(--clr-muted);">Marge: 24–64px</span>
+          <span style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:4px;padding:4px 10px;font-size:0.7rem;font-family:var(--font-mono);color:var(--clr-muted);">Touch min: 44px</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="max-width:1200px;margin:0 auto;padding:0 var(--sp-7);"></div>
+
+<!-- ========== 03 - LIVRABLES — PALETTE ========== -->
+<section class="void-section" style="background:var(--clr-surface);">
+  <div class="section__inner">
+    <div class="section__label">03 — Livrables</div>
+    <h2 class="section__title reveal">Palette officielle</h2>
+    <p class="reveal" style="color:var(--clr-muted); margin-bottom:var(--sp-6);" data-delay="100">Cliquez sur une couleur pour copier automatiquement le code hex.</p>
+
+    <div class="palette reveal" data-delay="150">
+      <div class="palette__swatch" data-hex="#1E1E24" onclick="navigator.clipboard.writeText('#1E1E24'); alert('Couleur copiée: #1E1E24');">
+        <div class="palette__color" style="background:#1E1E24;"></div>
+        <div class="palette__hex">#1E1E24</div>
+        <div class="palette__name">Void Black</div>
+      </div>
+      <div class="palette__swatch" data-hex="#C9915A" onclick="navigator.clipboard.writeText('#C9915A'); alert('Couleur copiée: #C9915A');">
+        <div class="palette__color" style="background:#C9915A;"></div>
+        <div class="palette__hex">#C9915A</div>
+        <div class="palette__name">Void Terracotta</div>
+      </div>
+      <div class="palette__swatch" data-hex="#F9F8F6" onclick="navigator.clipboard.writeText('#F9F8F6'); alert('Couleur copiée: #F9F8F6');">
+        <div class="palette__color" style="background:#F9F8F6; border:1px solid rgba(0,0,0,0.1);"></div>
+        <div class="palette__hex">#F9F8F6</div>
+        <div class="palette__name">Void Light</div>
+      </div>
+      <div class="palette__swatch" data-hex="#2A2A33" onclick="navigator.clipboard.writeText('#2A2A33'); alert('Couleur copiée: #2A2A33');">
+        <div class="palette__color" style="background:#2A2A33;"></div>
+        <div class="palette__hex">#2A2A33</div>
+        <div class="palette__name">Void Surface</div>
+      </div>
+      <div class="palette__swatch" data-hex="#7A7890" onclick="navigator.clipboard.writeText('#7A7890'); alert('Couleur copiée: #7A7890');">
+        <div class="palette__color" style="background:#7A7890;"></div>
+        <div class="palette__hex">#7A7890</div>
+        <div class="palette__name">Void Muted</div>
+      </div>
+    </div>
+
+    <!-- TYPOGRAPHIES -->
+    <div style="margin-top:var(--sp-8);">
+      <div class="section__label">Typographies & Règles d'usage</div>
+      <div class="reveal">
+        <div class="typo-display" style="font-family: var(--font-display); font-size: 2.5rem; color: #F9F8F6; margin-bottom: 8px;">Space Grotesk — Display</div>
+        <p style="font-size:0.9rem;color:var(--clr-muted);padding-bottom:var(--sp-4);"><strong>Usage:</strong> Titres principaux (H1, H2), logotype et citations fortes.<br><strong>Règles:</strong> Taille minimale 24px, tracking légèrement resserré (-0.02em), toujours en weights 600 ou 700.</p>
+        
+        <div class="typo-body" style="font-family: var(--font-body); font-size: 1.5rem; color: #C9915A; margin-bottom: 8px;">Inter — Corps de texte</div>
+        <p style="font-size:0.9rem;color:var(--clr-muted);padding-bottom:var(--sp-4);"><strong>Usage:</strong> Paragraphes, descriptions longues et textes de labeur.<br><strong>Règles:</strong> Taille minimale 16px, line-height aéré (1.6 à 1.8), weights 400 ou 500. Pas de bold excessif.</p>
+        
+        <div class="typo-mono" style="font-family: var(--font-mono); font-size: 1.2rem; color: #7A7890; margin-bottom: 8px;">Space Mono — Data & UI</div>
+        <p style="font-size:0.9rem;color:var(--clr-muted);padding-bottom:var(--sp-2);"><strong>Usage:</strong> Tags, codes, chiffres clés et petits labels techniques.<br><strong>Règles:</strong> Toujours en majuscules (uppercase), tracking très espacé (0.1em), weights 400 ou 700.</p>
+      </div>
+    </div>
+    
+    <!-- REFLEXION DE MARQUE -->
+    <div style="margin-top:var(--sp-8);">
+      <div class="section__label">Réflexion de marque</div>
+      <p class="reveal" style="font-size:1.1rem; line-height:1.8; color:var(--clr-muted); max-width:800px;">
+        Le positionnement de VOID s'articule autour de l'idée d'un espace infini ("the void") où naissent les concepts créatifs. Le choix d'une esthétique "Dark Premium" associée à une couleur terracotta (Void Terracotta) crée un contraste saisissant qui s'éloigne des codes classiques des agences. Le but est de refléter une identité <strong style="color:var(--clr-text);">brute, minimaliste et audacieuse</strong>, tout en restant extrêmement fonctionnelle sur les supports digitaux.
+      </p>
+      
+      <!-- BOUTON DE TELECHARGEMENT -->
+      <div class="reveal" style="margin-top:var(--sp-5);">
+        <a href="#" class="btn btn-primary" onclick="alert('Téléchargement du PDF de la charte en cours...'); return false;">Télécharger la charte complète (PDF)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MOCKUPS ========== -->
+<section class="void-section">
+  <div class="section__inner">
+    <div class="section__label">Templates & déclinaisons</div>
+    <h2 class="section__title reveal">Mockups &amp;<br>applications</h2>
+
+    <div class="mockup-grid" style="margin-top:var(--sp-6);">
+      <div class="mockup-item reveal" data-delay="0">
+        <div class="mockup-screen" style="background:linear-gradient(160deg,#1E1E24,#2a1a4e); min-height:320px;">
+          <div style="text-align:center; padding:var(--sp-5);">
+            <div style="font-family:var(--font-display);font-size:2.5rem;font-weight:700;background:linear-gradient(135deg,#7B5FFF,#00E5C8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">VOID</div>
+            <div style="font-size:0.7rem;color:#8B8AA0;margin-top:var(--sp-2);letter-spacing:0.2em;">CREATIVE STUDIO</div>
+            <div style="width:60px;height:1px;background:linear-gradient(90deg,#7B5FFF,#00E5C8);margin:var(--sp-3) auto;"></div>
+            <div style="font-size:0.65rem;color:#8B8AA0;">Post Instagram · 1:1</div>
+          </div>
+        </div>
+        <div class="mockup-label">Template Post Instagram</div>
+      </div>
+
+      <div class="mockup-item reveal" data-delay="80">
+        <div class="mockup-screen" style="background:linear-gradient(160deg,#1E1E24,#0d2040); min-height:320px;">
+          <div style="text-align:center; padding:var(--sp-5);">
+            <div style="font-family:var(--font-mono);font-size:0.6rem;color:#00E5C8;letter-spacing:0.15em;margin-bottom:var(--sp-3);">NOUVEAUTÉ</div>
+            <div style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:#F5F3FF;line-height:1.1;">Découvrez<br>notre nouvelle<br>collection</div>
+            <div style="margin-top:var(--sp-4);padding:var(--sp-2) var(--sp-4);background:#7B5FFF;border-radius:99px;display:inline-block;font-size:0.7rem;font-weight:600;color:#fff;">En savoir plus →</div>
+          </div>
+        </div>
+        <div class="mockup-label">Story Instagram · 9:16</div>
+      </div>
+
+      <div class="mockup-item reveal" data-delay="160">
+        <div class="mockup-screen" style="background:linear-gradient(160deg,#0f1a2e,#1E1E24); aspect-ratio:1.91/1; min-height:220px;">
+          <div style="text-align:left; padding:var(--sp-5); width:100%;">
+            <div style="display:flex;align-items:center;gap:var(--sp-3);margin-bottom:var(--sp-4);">
+              <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#7B5FFF,#00E5C8);"></div>
+              <div>
+                <div style="font-family:var(--font-display);font-size:0.9rem;font-weight:700;color:#F5F3FF;">VOID Studio</div>
+                <div style="font-size:0.65rem;color:#8B8AA0;">Certified Partner</div>
+              </div>
+            </div>
+            <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:#F5F3FF;line-height:1.3;">Bannière LinkedIn · Cover</div>
+          </div>
+        </div>
+        <div class="mockup-label">Bannière LinkedIn</div>
+      </div>
+
+      <div class="mockup-item reveal" data-delay="240">
+        <div class="mockup-screen" style="background:linear-gradient(135deg,#1E1E24,#160d2a); min-height:220px;">
+          <div style="text-align:center; padding:var(--sp-5);">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#7B5FFF,#00E5C8);margin:0 auto var(--sp-3); display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;color:#fff;">V</div>
+            <div style="font-family:var(--font-display);font-size:0.9rem;font-weight:700;color:#F5F3FF;">Hervé K.</div>
+            <div style="font-size:0.65rem;color:#8B8AA0;margin-top:2px;">VOID Studio · CM</div>
+            <div style="width:80px;height:1px;background:rgba(255,255,255,0.1);margin:var(--sp-3) auto;"></div>
+            <div style="font-family:var(--font-mono);font-size:0.55rem;color:#00E5C8;">herve.biovakakpo@kakpo.com</div>
+          </div>
+        </div>
+        <div class="mockup-label">Carte de visite digitale</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DO / DON'T ========== -->
+<section class="void-section" style="background:var(--clr-surface);">
+  <div class="section__inner">
+    <div class="section__label">Règles d'usage</div>
+    <h2 class="section__title reveal">Do &amp; Don't</h2>
+    <p class="reveal" style="color:var(--clr-muted);margin-bottom:var(--sp-6);" data-delay="100">Les règles de bon et mauvais usage de la charte VOID.</p>
+
+    <div class="do-dont reveal" data-delay="150">
+      <div class="do-card">
+        <div class="label">✓ À faire — DO</div>
+        <ul>
+          <li>Utiliser uniquement les 6 couleurs officielles de la palette</li>
+          <li>Respecter les marges de sécurité du logo (espace = hauteur du V)</li>
+          <li>Utiliser Space Grotesk pour tous les titres et éléments de marque</li>
+          <li>Maintenir un fond sombre pour les supports digitaux</li>
+          <li>Utiliser les templates Canva fournis pour les réseaux sociaux</li>
+          <li>Toujours inclure la baseline "Creative Studio" sous le logo principal</li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <div class="label">✗ À éviter — DON'T</div>
+        <ul>
+          <li>Modifier les proportions ou les couleurs du logo</li>
+          <li>Utiliser des polices autres qu'Inter, Space Grotesk et Space Mono</li>
+          <li>Placer le logo sur un fond de couleur vive non validé</li>
+          <li>Utiliser des filtres ou effets Instagram sur les visuels de marque</li>
+          <li>Mélanger les 2 versions du logo sur un même support</li>
+          <li>Utiliser le logo en dessous de 24px de hauteur minimum</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TON & VOIX ========== -->
+<section class="void-section">
+  <div class="section__inner">
+    <div class="section__label">Ton & voix de marque</div>
+    <h2 class="section__title reveal">La personnalité<br>de VOID</h2>
+
+    <div style="display:flex; flex-wrap:wrap; gap:var(--sp-3); margin-top:var(--sp-6);" class="reveal">
+      <span class="brand-word" style="background:rgba(123,95,255,0.15);color:var(--clr-accent);">Audacieux</span>
+      <span class="brand-word" style="background:rgba(0,229,200,0.1);color:var(--clr-accent-2);">Minimaliste</span>
+      <span class="brand-word" style="background:rgba(255,95,143,0.1);color:var(--clr-accent-3);">Premium</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-5);margin-top:var(--sp-6);" class="reveal" data-delay="100">
+      <div style="background:var(--clr-surface);border:1px solid rgba(0,229,200,0.3);border-radius:var(--r-lg);padding:var(--sp-5);">
+        <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--clr-accent-2);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:var(--sp-3);">✓ On-brand copy</div>
+        <p style="font-size:0.9rem;font-style:italic;color:var(--clr-text);line-height:1.6;">"Votre marque mérite mieux que le minimum. Nous concevons l'identité qui fait la différence."</p>
+      </div>
+      <div style="background:var(--clr-surface);border:1px solid rgba(255,95,143,0.3);border-radius:var(--r-lg);padding:var(--sp-5);">
+        <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--clr-accent-3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:var(--sp-3);">✗ Off-brand copy</div>
+        <p style="font-size:0.9rem;font-style:italic;color:var(--clr-muted);line-height:1.6;">"Bonjour ! Nous sommes une agence créative qui fait des logos et des affiches pour pas cher !"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 04 - RÉSULTATS ========== -->
+<section class="void-section" style="background:var(--clr-surface);">
+  <div class="section__inner">
+    <div class="section__label">04 — Résultats</div>
+    <h2 class="section__title reveal">Ce qui a<br>changé concrètement</h2>
+
+    <div class="kpis" style="margin-top:var(--sp-6);">
+      <div class="kpi reveal" data-delay="0">
+        <div class="kpi__number">+220%</div>
+        <div class="kpi__label">Engagement posts LinkedIn post-charte</div>
+      </div>
+      <div class="kpi reveal" data-delay="80">
+        <div class="kpi__number">6</div>
+        <div class="kpi__label">Déclinaisons logo livrées</div>
+      </div>
+      <div class="kpi reveal" data-delay="160">
+        <div class="kpi__number">24</div>
+        <div class="kpi__label">Pages dans le guide de marque</div>
+      </div>
+      <div class="kpi reveal" data-delay="240">
+        <div class="kpi__number">100%</div>
+        <div class="kpi__label">Satisfaction client (validé en 1 round)</div>
+      </div>
+    </div>
+
+    <div style="margin-top:var(--sp-7); text-align:center;" class="reveal" data-delay="300">
+      <a href="#" class="btn btn-primary" style="margin-right:var(--sp-3);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Télécharger la charte PDF
+      </a>
+      <a href="projets.html" class="btn btn-outline">Voir tous les projets →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand-name">Hervé KAKPO<span style="color:var(--clr-accent)">.</span></div>
+      <p class="footer__brand-desc">Community Manager hybride tech &amp; créatif basé à Lomé.</p>
+      <div class="footer__socials">
+        
+        <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+        <a href="mailto:herve.biovakakpo@kakpo.com" class="social-link" aria-label="Email">@</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__heading">Navigation</div>
+      <ul class="footer__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="void.html">VOID</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer__heading">Étude suivante</div>
+      <ul class="footer__links">
+        <li><a href="projets.html">Social Media · Fintech →</a></li>
+        <li><a href="projets.html">Planning Éditorial →</a></li>
+        <li><a href="contact.html">Votre projet →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom" style="max-width:1200px;margin:0 auto;">
+    <span>© 2026 Hervé KAKPO · Community Manager</span>
+    <span>Lomé, Togo 🇹🇬</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
+

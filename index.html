@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hervé KAKPO — Community Manager · Lomé</title>
+  <meta name="description" content="Community Manager hybride tech & créatif basé à Lomé. De la charte graphique au calendrier éditorial, je pilote votre marque de A à Z." />
+  <meta property="og:title" content="Hervé KAKPO — Community Manager · Lomé" />
+  <meta property="og:description" content="CM hybride tech & créatif. Je construis des communautés qui convertissent." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 128px 48px 64px;
+      position: relative;
+      overflow: hidden;
+      gap: 64px;
+    }
+    .hero__content { position: relative; z-index: 2; }
+    .hero__visual {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero__photo-frame {
+      position: relative;
+      width: 380px;
+      height: 480px;
+      animation: fade-in-up 0.9s 0.3s var(--ease) both;
+    }
+    .hero__photo-frame::before {
+      content: '';
+      position: absolute;
+      inset: -16px;
+      border: 1px solid rgba(123,95,255,0.25);
+      border-radius: 28px;
+      animation: border-glow 4s ease-in-out infinite alternate;
+    }
+    .hero__photo-frame::after {
+      content: '';
+      position: absolute;
+      inset: -32px;
+      border: 1px solid rgba(0,229,200,0.1);
+      border-radius: 36px;
+      animation: border-glow 4s 2s ease-in-out infinite alternate;
+    }
+    @keyframes border-glow {
+      from { opacity: 0.4; transform: scale(1); }
+      to   { opacity: 1;   transform: scale(1.02); }
+    }
+    .hero__photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 20px;
+      filter: contrast(1.05) brightness(0.95);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 40px rgba(0,0,0,0.3);
+    }
+    .hero__badge {
+      position: absolute;
+      bottom: -16px;
+      left: -24px;
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border-glow);
+      border-radius: var(--r-md);
+      padding: var(--sp-3) var(--sp-4);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
+      backdrop-filter: blur(20px);
+      animation: float 6s ease-in-out infinite;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      z-index: 3;
+    }
+    .hero__badge-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--clr-accent-2);
+      box-shadow: 0 0 8px var(--clr-accent-2);
+      animation: pulse 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    .hero__badge-text {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--clr-text);
+      white-space: nowrap;
+    }
+    .hero__stat-badge {
+      position: absolute;
+      top: -16px;
+      right: -24px;
+      background: var(--clr-accent-soft);
+      border: 1px solid var(--clr-border-glow);
+      border-radius: var(--r-md);
+      padding: var(--sp-3) var(--sp-4);
+      text-align: center;
+      backdrop-filter: blur(20px);
+      animation: float 8s 2s ease-in-out infinite;
+      z-index: 3;
+      box-shadow: var(--shadow-glow);
+    }
+    .hero__stat-num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--clr-accent);
+      display: block;
+      line-height: 1;
+    }
+    .hero__stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--clr-muted);
+      display: block;
+      margin-top: 4px;
+    }
+    .service__icon svg { color: var(--clr-accent); }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; text-align: center; gap: var(--sp-7); }
+      .hero__visual { order: -1; }
+      .hero__photo-frame { width: 240px; height: 300px; }
+      .hero__actions { justify-content: center; }
+      .hero__badge { left: 0; }
+      .hero__stat-badge { right: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== ASTRAL LOADER ========== -->
+<div id="astral-loader">
+  <!-- Etoiles de fond -->
+  <div class="stars"></div>
+  <div class="stars2"></div>
+  <div class="stars3"></div>
+  
+  <!-- Content 1: Image -->
+  <div class="astral-content" id="astral-content-1">
+    <div class="astral-frame">
+      <img src="patronus.jpg" alt="Patronus" />
+    </div>
+    <div class="astral-hint">Cliquez pour découvrir</div>
+  </div>
+
+  <!-- Content 2: Texte Bienvenue -->
+  <div class="astral-content hidden-content" id="astral-content-2">
+    <h2 class="welcome-text">Hervé vous souhaite la bienvenue</h2>
+  </div>
+</div>
+
+<style>
+  /* Styles pour la page de chargement */
+  body.loading {
+    overflow: hidden;
+    height: 100vh;
+  }
+  
+  #astral-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #1C1C1E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  #astral-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .astral-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    z-index: 5;
+  }
+
+  .hidden-content {
+    opacity: 0;
+    transform: scale(1.1);
+    pointer-events: none;
+  }
+
+  /* Cadre magique */
+  .astral-frame {
+    position: relative;
+    width: 220px;
+    height: 340px;
+    border-radius: 12px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.05), inset 0 0 20px rgba(255, 255, 255, 0.02);
+    animation: float-astral 4s ease-in-out infinite, glow-astral 3s ease-in-out infinite alternate;
+  }
+  
+  .astral-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    filter: contrast(1.1) brightness(0.9);
+  }
+
+  .astral-hint {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: blink 2s infinite;
+  }
+
+  .welcome-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(4.5rem, 10vw, 7.5rem); /* Taille augmentée pour lisibilité */
+    color: #F9F8F6; /* Void Light (Blanc cassé) pour contraster avec le fond sombre */
+    text-align: center;
+    max-width: 900px;
+    padding: 0 20px;
+    line-height: 1.3;
+    font-weight: 400;
+    text-shadow: 0 0 30px rgba(201, 145, 90, 0.4), 0 2px 10px rgba(0,0,0,0.5); /* Ombre Terracotta lumineuse */
+    animation: pulse-text 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes float-astral {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+  @keyframes glow-astral {
+    from { box-shadow: 0 0 30px rgba(123, 95, 255, 0.2); }
+    to { box-shadow: 0 0 60px rgba(0, 229, 200, 0.4); border-color: rgba(0, 229, 200, 0.5); }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+  }
+  @keyframes pulse-text {
+    from { opacity: 0.85; filter: brightness(1); transform: scale(0.98); }
+    to { opacity: 1; filter: brightness(1.2); transform: scale(1.02); }
+  }
+
+  /* Effet d'étoiles */
+  .stars, .stars2, .stars3 {
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px; height: 2px;
+    background: transparent;
+    z-index: 1;
+  }
+  
+  .stars {
+    box-shadow: 
+      10vw 20vh #fff, 40vw 10vh #fff, 80vw 30vh #fff, 20vw 80vh #fff, 50vw 50vh #fff, 
+      90vw 70vh #fff, 15vw 40vh #fff, 60vw 90vh #fff, 30vw 15vh #fff, 75vw 60vh #fff,
+      5vw 85vh #fff, 85vw 15vh #fff, 45vw 75vh #fff, 65vw 25vh #fff, 95vw 95vh #fff;
+    animation: animStar 50s linear infinite;
+  }
+  .stars::after { content: " "; position: absolute; top: 100vh; width: 2px; height: 2px; background: transparent; box-shadow: inherit; }
+  
+  .stars2 {
+    width: 3px; height: 3px;
+    box-shadow: 
+      25vw 30vh #fff, 65vw 10vh #fff, 85vw 40vh #fff, 10vw 90vh #fff, 55vw 60vh #fff, 
+      15vw 15vh #fff, 35vw 85vh #fff, 75vw 80vh #fff, 95vw 20vh #fff, 45vw 35vh #fff;
+    animation: animStar 100s linear infinite;
+  }
+  .stars2::after { content: " "; position: absolute; top: 100vh; width: 3px; height: 3px; background: transparent; box-shadow: inherit; }
+
+  @keyframes animStar {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-100vh); }
+  }
+</style>
+
+<script>
+  const loader = document.getElementById('astral-loader');
+  
+  // Si on vient du bouton retour (ex: index.html?skip=true ou index.html#home)
+  // On masque immédiatement le loader
+  if (window.location.search.includes('skip') || window.location.hash) {
+    loader.style.display = 'none';
+    loader.remove();
+  } else {
+    // Mode normal avec loader
+    document.body.classList.add('loading');
+    
+    const content1 = document.getElementById('astral-content-1');
+    const content2 = document.getElementById('astral-content-2');
+    let isClicked = false;
+    
+    // Masquer le loader au clic
+    loader.addEventListener('click', () => {
+      if (isClicked) return;
+      isClicked = true;
+      
+      // Transition : l'image disparait
+      content1.style.opacity = '0';
+      content1.style.transform = 'scale(0.8) translateY(-30px)';
+      
+      // Accélérer les étoiles (transition étoilée)
+      document.querySelector('.stars').style.animationDuration = '15s';
+      document.querySelector('.stars2').style.animationDuration = '25s';
+      
+      setTimeout(() => {
+        content1.style.display = 'none';
+        
+        // La phrase apparait
+        content2.classList.remove('hidden-content');
+        
+        // 5 secondes après l'apparition du texte, on accède à l'accueil
+        setTimeout(() => {
+          loader.classList.add('hidden');
+          document.body.classList.remove('loading');
+          
+          // Nettoyage DOM
+          setTimeout(() => {
+            loader.remove();
+          }, 1000);
+        }, 5000);
+        
+      }, 800); // Attend la fin de disparition de l'image
+    });
+  }
+</script>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav" id="navbar">
+  <a href="index.html" class="nav__logo">HK<span>.</span></a>
+  <ul class="nav__links">
+    <li><a href="#projets" class="nav__link">Projets</a></li>
+    <li><a href="#services" class="nav__link">Services</a></li>
+    <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+    <li><a href="contact.html" class="nav__link nav__cta">Me contacter</a></li>
+  </ul>
+  <button class="nav__burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero__content">
+    <div class="hero__tag" style="animation: fade-in-up 0.6s var(--ease) both;">
+      Disponible pour de nouvelles missions
+    </div>
+    <h1 class="hero__name" style="animation: fade-in-up 0.7s 0.1s var(--ease) both;">
+      Hervé<br><span class="accent">KAKPO</span>
+    </h1>
+    <p class="hero__title" style="animation: fade-in-up 0.7s 0.2s var(--ease) both;">
+      Community Manager · Branding · Stratégie Digitale
+    </p>
+    <p class="hero__tagline" style="animation: fade-in-up 0.7s 0.3s var(--ease) both;">
+      CM hybride tech &amp; créatif —<br>
+      je construis des <span class="highlight">communautés qui convertissent</span>.
+    </p>
+    <div class="hero__actions" style="animation: fade-in-up 0.7s 0.4s var(--ease) both;">
+      <a href="#projets" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Voir mes projets
+      </a>
+      <a href="contact.html" class="btn btn-outline">Me contacter</a>
+    </div>
+  </div>
+
+  <div class="hero__visual">
+    <div class="hero__photo-frame" id="hero-photo-frame">
+      <img src="avatar.png" alt="Hervé KAKPO — Community Manager" class="hero__photo" />
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        <span class="hero__badge-text">Disponible · Lomé, Togo</span>
+      </div>
+      <div class="hero__stat-badge">
+        <span class="hero__stat-num">50+</span>
+        <span class="hero__stat-label">Clients</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0; padding-bottom: var(--sp-7);">
+  <div class="section__inner">
+    <div class="metrics reveal">
+      <div class="metric">
+        <span class="metric__number" data-target="50" data-suffix="+">50+</span>
+        <span class="metric__label">Clients accompagnés</span>
+      </div>
+      <div class="metric">
+        <span class="metric__number" data-target="80" data-suffix="%">80%</span>
+        <span class="metric__label">Taux de résolution moyen</span>
+      </div>
+      <div class="metric">
+        <span class="metric__number" data-target="15" data-suffix="+">15+</span>
+        <span class="metric__label">Membres d'équipes gérés</span>
+      </div>
+      <div class="metric">
+        <span class="metric__number" data-target="3" data-suffix="ans">3 ans</span>
+        <span class="metric__label">D'expérience terrain</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projets">
+  <div class="section__inner">
+    <div class="section__label">Études de cas</div>
+    <h2 class="section__title reveal">Mes projets<br>phares</h2>
+    <p class="section__subtitle reveal" data-delay="100">Chaque projet est documenté avec contexte, démarche, livrables et résultats chiffrés.</p>
+    <div class="bento" style="margin-top: var(--sp-6);">
+      <article class="bento__card bento__card--wide reveal" data-delay="0" onclick="location.href='void.html'" style="min-height:320px; background: linear-gradient(135deg, #2A2A33, #1C1C1E);">
+        <div class="bento__card__arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <div class="bento__card__body">
+          <div class="bento__card__tags">
+            <span class="tag tag--accent">Branding</span>
+            <span class="tag tag--accent">Charte graphique</span>
+            <span class="tag" style="background:rgba(201,145,90,0.12);color:#C9915A;border-color:rgba(201,145,90,0.3);">Fév. 2024</span>
+          </div>
+          <h3 class="bento__card__title">VOID — Charte Graphique Complète</h3>
+          <p class="bento__card__desc">Création de l'identité visuelle complète : logo, palette, typographies, templates et guide d'usage.</p>
+        </div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--font-display);font-size:10rem;font-weight:700;letter-spacing:-0.06em;color:rgba(255,255,255,0.03);pointer-events:none;user-select:none;white-space:nowrap;">VOID</div>
+      </article>
+      <article class="bento__card bento__card--tall reveal" data-delay="100" onclick="location.href='fintech.html'" style="min-height:320px; background: linear-gradient(160deg, #2A2A33, #222228);">
+        <div class="bento__card__arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <div class="bento__card__body">
+          <div class="bento__card__tags">
+            <span class="tag tag--teal">Social Media</span>
+            <span class="tag">Instagram</span>
+            <span class="tag" style="background:rgba(212,195,179,0.15);color:#D4C3B3;border-color:rgba(212,195,179,0.3);">Juin 2024</span>
+          </div>
+          <h3 class="bento__card__title">Stratégie Social Media · Startup Fintech</h3>
+          <p class="bento__card__desc">+340% d'engagement en 60 jours avec une stratégie de contenu ciblée et un calendrier éditorial structuré.</p>
+        </div>
+      </article>
+      <article class="bento__card bento__card--med reveal" data-delay="150" onclick="location.href='editorial.html'" style="min-height:200px; background: linear-gradient(135deg, #33333D, #2A2A33);">
+        <div class="bento__card__arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <div class="bento__card__body">
+          <div class="bento__card__tags">
+            <span class="tag tag--accent">Notion</span>
+            <span class="tag">Editorial</span>
+            <span class="tag" style="background:rgba(139,125,107,0.15);color:#8B7D6B;border-color:rgba(139,125,107,0.3);">Sept. 2024</span>
+          </div>
+          <h3 class="bento__card__title">Planning Éditorial · 3 mois</h3>
+          <p class="bento__card__desc">Système Notion complet : calendrier, briefs, suivi KPIs et validation client en temps réel.</p>
+        </div>
+      </article>
+      <article class="bento__card bento__card--sm reveal" data-delay="200" onclick="location.href='email.html'" style="min-height:200px; background: linear-gradient(135deg, #2A2A33, #1C1C1E);">
+        <div class="bento__card__arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <div class="bento__card__body">
+          <div class="bento__card__tags">
+            <span class="tag tag--pink">Email</span>
+            <span class="tag">Mailchimp</span>
+            <span class="tag" style="background:rgba(139,125,107,0.15);color:#8B7D6B;border-color:rgba(139,125,107,0.3);">Nov. 2024</span>
+          </div>
+          <h3 class="bento__card__title">Campagne Email · Lancement produit</h3>
+          <p class="bento__card__desc">42% de taux d'ouverture sur une séquence de 5 emails de lancement.</p>
+        </div>
+      </article>
+      <article class="bento__card bento__card--lg reveal" data-delay="250" onclick="location.href='community.html'" style="min-height:200px; background: linear-gradient(135deg, #33333D, #2A2A33);">
+        <div class="bento__card__arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+        <div class="bento__card__body">
+          <div class="bento__card__tags">
+            <span class="tag tag--teal">Community</span>
+            <span class="tag">WhatsApp</span>
+            <span class="tag" style="background:rgba(212,195,179,0.15);color:#D4C3B3;border-color:rgba(212,195,179,0.3);">Jan. 2025</span>
+          </div>
+          <h3 class="bento__card__title">Animation de communauté · 500+ membres</h3>
+          <p class="bento__card__desc">Gestion quotidienne d'une communauté de 500+ membres : modération, animations et fidélisation sur 6 mois.</p>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center; margin-top: var(--sp-7);">
+      <a href="projets.html" class="btn btn-outline">Voir tous les projets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services" style="background: var(--clr-surface);">
+  <div class="section__inner">
+    <div class="section__label">Ce que je fais</div>
+    <h2 class="section__title reveal">Services &amp;<br>expertises</h2>
+    <p class="section__subtitle reveal" data-delay="100">Une approche hybride qui combine créativité, stratégie et technologie.</p>
+    <div class="services" style="margin-top: var(--sp-6);">
+      <div class="service__card reveal" data-delay="0">
+        <div class="service__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3 class="service__title">Social Media Management</h3>
+        <p class="service__desc">Gestion complète de vos réseaux sociaux — création de contenu, programmation, community management et reporting mensuel.</p>
+      </div>
+      <div class="service__card reveal" data-delay="80">
+        <div class="service__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M6 20v-2a6 6 0 0112 0v2"/></svg></div>
+        <h3 class="service__title">Branding &amp; Identité Visuelle</h3>
+        <p class="service__desc">Charte graphique complète : logo, palette, typographies, templates et guide d'usage. Cohérence visuelle sur tous les supports.</p>
+      </div>
+      <div class="service__card reveal" data-delay="160">
+        <div class="service__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+        <h3 class="service__title">Stratégie Éditoriale</h3>
+        <p class="service__desc">Calendrier éditorial sur mesure, ligne éditoriale et production de contenus optimisés pour chaque plateforme et algorithme.</p>
+      </div>
+      <div class="service__card reveal" data-delay="240">
+        <div class="service__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h3 class="service__title">Analytics &amp; Performance</h3>
+        <p class="service__desc">Suivi des KPIs, rapports mensuels et optimisation continue basés sur les données — Google Analytics, Meta Insights, Notion.</p>
+      </div>
+      <div class="service__card reveal" data-delay="320">
+        <div class="service__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3 class="service__title">Workflow &amp; Automatisation</h3>
+        <p class="service__desc">Intégration d'outils et automatisations dans le workflow CM pour multiplier la productivité sans perdre en authenticité.</p>
+      </div>
+      <div class="service__card reveal" data-delay="400">
+        <div class="service__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+        <h3 class="service__title">Email Marketing</h3>
+        <p class="service__desc">Séquences d'emails optimisées, newsletters et campagnes de lancement sur Mailchimp avec suivi des taux d'ouverture et de clic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact-cta">
+  <div class="section__inner" style="text-align:center;">
+    <div class="section__label" style="justify-content:center;">Travaillons ensemble</div>
+    <h2 class="section__title reveal" style="max-width:600px; margin: 0 auto var(--sp-3);">Prêt à booster votre présence digitale ?</h2>
+    <p class="reveal" style="color: var(--clr-muted); max-width:480px; margin: 0 auto var(--sp-6);" data-delay="100">Basé à Lomé, disponible partout. Discutons de votre projet et de la meilleure stratégie pour votre marque.</p>
+    <div class="flex flex-center gap-4 reveal" data-delay="200">
+      <a href="contact.html" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Me contacter
+      </a>
+      <a href="a-propos.html" class="btn btn-outline">En savoir plus sur moi</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand-name">Hervé KAKPO<span style="color:var(--clr-accent)">.</span></div>
+      <p class="footer__brand-desc">Community Manager hybride tech &amp; créatif basé à Lomé. Je construis des communautés qui convertissent.</p>
+      <div class="footer__socials">
+        
+        <a href="#" class="social-link" aria-label="WhatsApp">WA</a>
+        <a href="mailto:herve.biovakakpo@kakpo.com" class="social-link" aria-label="Email">@</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__heading">Navigation</div>
+      <ul class="footer__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="void.html">VOID — Étude de cas</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer__heading">Contact</div>
+      <ul class="footer__links">
+        <li><a href="mailto:herve.biovakakpo@kakpo.com">herve.biovakakpo@kakpo.com</a></li>
+        
+        <li><a href="#">WhatsApp</a></li>
+        <li><a href="#" style="display:flex;align-items:center;gap:4px;"><span style="color:var(--clr-accent-2)">●</span> Disponible</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Hervé KAKPO · Community Manager</span>
+    <span>Lomé, Togo</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
+

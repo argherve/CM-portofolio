@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets — Hervé KAKPO · Community Manager</title>
+  <meta name="description"
+    content="Tous les projets de Hervé KAKPO : études de cas en Social Media Management, Branding, Stratégie Éditoriale et Community Management." />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: var(--sp-2);
+      flex-wrap: wrap;
+      margin-bottom: var(--sp-6);
+    }
+
+    .filter-btn {
+      padding: var(--sp-2) var(--sp-4);
+      border-radius: var(--r-full);
+      border: 1px solid var(--clr-border);
+      background: transparent;
+      color: var(--clr-muted);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--t-fast) var(--ease);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--clr-accent);
+      color: var(--clr-accent);
+    }
+
+    .filter-btn.active {
+      background: var(--clr-accent);
+      border-color: var(--clr-accent);
+      color: #fff;
+    }
+
+    [data-category] {
+      transition: opacity var(--t-med) var(--ease), transform var(--t-med) var(--ease);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="navbar">
+    <a href="index.html" class="nav__logo">HK<span>.</span></a>
+    <ul class="nav__links">
+      <li><a href="index.html" class="nav__link">Accueil</a></li>
+      <li><a href="projets.html" class="nav__link active">Projets</a></li>
+      <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+      <li><a href="contact.html" class="nav__link nav__cta">Me contacter</a></li>
+    </ul>
+    <button class="nav__burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <div class="page-hero">
+    <div class="page-hero__inner">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a>
+        <span>/</span>
+        <span style="color:var(--clr-text);">Projets</span>
+      </div>
+      <div class="section__label">Portfolio</div>
+      <h1 class="section__title" style="font-size:clamp(2.5rem,6vw,5rem); max-width:700px;">
+        Tous mes<br>projets
+      </h1>
+      <p style="font-size:1rem;color:var(--clr-muted);max-width:480px;margin-top:var(--sp-3);">
+        5 études de cas documentées avec contexte, démarche stratégique, livrables et résultats chiffrés.
+      </p>
+    </div>
+  </div>
+
+  <!-- ========== PROJETS GRID ========== -->
+  <section class="section" style="padding-top:0;">
+    <div class="section__inner">
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+        <button class="filter-btn" data-filter="social">Social Media</button>
+        <button class="filter-btn" data-filter="editorial">Éditorial</button>
+        <button class="filter-btn" data-filter="community">Community</button>
+        <button class="filter-btn" data-filter="email">Email</button>
+      </div>
+
+      <div class="projects-grid">
+
+
+
+        <!-- VOID (Featured) -->
+        <article class="project-card reveal" data-category="branding" data-delay="80">
+          <div class="project-card__img-wrap">
+            <div class="project-card__img"
+              style="background:linear-gradient(135deg,#1E1E24,#2a1a4e);height:220px;position:relative;">
+              <div
+                style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--font-display);font-size:4rem;font-weight:700;letter-spacing:-0.05em;color:rgba(255,255,255,0.05);">
+                VOID</div>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__tags">
+              <span class="tag tag--accent">Branding</span>
+              <span class="tag">Identité visuelle</span>
+              <span class="tag" style="background:rgba(201,145,90,0.12);color:#C9915A;border-color:rgba(201,145,90,0.3);">Fév. 2024</span>
+            </div>
+            <h2 class="project-card__title">VOID — Charte Graphique Complète</h2>
+            <p class="project-card__desc">Création de l'identité visuelle complète d'une marque créative premium : logo (6 déclinaisons), palette officielle, typographies, guide de marque 24 pages et templates.</p>
+            <a href="void.html" class="project-card__link">
+              Voir l'étude de cas
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Social Media Fintech -->
+        <article class="project-card reveal" data-category="social" data-delay="80">
+          <div class="project-card__img-wrap">
+            <div class="project-card__img"
+              style="background:linear-gradient(160deg, #2A2A33, #222228);height:220px;display:flex;align-items:center;justify-content:center;">
+              <div style="text-align:center;">
+                <div style="font-size:2.5rem;margin-bottom:8px;"><svg width="40" height="40" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.5">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg></div>
+                <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--clr-accent-2);letter-spacing:0.1em;">+340%
+                  ENGAGEMENT</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__tags">
+              <span class="tag tag--teal">Social Media</span>
+              <span class="tag">Instagram</span>
+              <span class="tag" style="background:rgba(212,195,179,0.15);color:#D4C3B3;border-color:rgba(212,195,179,0.3);">Juin 2024</span>
+            </div>
+            <h2 class="project-card__title">Stratégie Social Media · Startup Fintech</h2>
+            <p class="project-card__desc">+340% d'engagement en 60 jours grâce à une stratégie de contenu ciblée, un
+              calendrier éditorial structuré et une adaptation fine des formats par plateforme.</p>
+            <a href="fintech.html" class="project-card__link">
+              Voir l'étude de cas
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Planning Éditorial -->
+        <article class="project-card reveal" data-category="editorial" data-delay="160">
+          <div class="project-card__img-wrap">
+            <div class="project-card__img"
+              style="background:linear-gradient(135deg, #33333D, #2A2A33);height:220px;display:flex;align-items:center;justify-content:center;">
+              <div style="text-align:center;">
+                <div style="font-size:2.5rem;margin-bottom:8px;"><svg width="40" height="40" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                  </svg></div>
+                <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--clr-accent-3);letter-spacing:0.1em;">NOTION ·
+                  3 MOIS</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__tags">
+              <span class="tag tag--accent">Éditorial</span>
+              <span class="tag">Notion</span>
+              <span class="tag" style="background:rgba(139,125,107,0.15);color:#8B7D6B;border-color:rgba(139,125,107,0.3);">Sept. 2024</span>
+            </div>
+            <h2 class="project-card__title">Planning Éditorial · Système Notion</h2>
+            <p class="project-card__desc">Conception d'un système Notion complet : calendrier 3 mois, briefs de contenu,
+              workflow de validation client et tableau de suivi des KPIs en temps réel.</p>
+            <a href="editorial.html" class="project-card__link">
+              Voir l'étude de cas
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Email Marketing -->
+        <article class="project-card reveal" data-category="email" data-delay="240">
+          <div class="project-card__img-wrap">
+            <div class="project-card__img"
+              style="background:linear-gradient(135deg, #2A2A33, #1C1C1E);height:220px;display:flex;align-items:center;justify-content:center;">
+              <div style="text-align:center;">
+                <div style="font-size:2.5rem;margin-bottom:8px;"><svg width="40" height="40" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg></div>
+                <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--clr-accent-3);letter-spacing:0.1em;">42% TAUX
+                  D'OUVERTURE</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__tags">
+              <span class="tag tag--pink">Email Marketing</span>
+              <span class="tag">Mailchimp</span>
+              <span class="tag" style="background:rgba(139,125,107,0.15);color:#8B7D6B;border-color:rgba(139,125,107,0.3);">Nov. 2024</span>
+            </div>
+            <h2 class="project-card__title">Campagne Email · Lancement Produit</h2>
+            <p class="project-card__desc">Séquence de 5 emails de lancement sur Mailchimp avec 42% de taux d'ouverture
+              (moyenne secteur : 21%). Copywriting, segmentation et A/B testing.</p>
+            <a href="email.html" class="project-card__link">
+              Voir l'étude de cas
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Community -->
+        <article class="project-card reveal" data-category="community" data-delay="320">
+          <div class="project-card__img-wrap">
+            <div class="project-card__img"
+              style="background:linear-gradient(135deg, #33333D, #2A2A33);height:220px;display:flex;align-items:center;justify-content:center;">
+              <div style="text-align:center;">
+                <div style="font-size:2.5rem;margin-bottom:8px;"><svg width="40" height="40" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                    <path d="M16 3.13a4 4 0 010 7.75" />
+                  </svg></div>
+                <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--clr-accent-2);letter-spacing:0.1em;">500+
+                  MEMBRES</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__tags">
+              <span class="tag tag--teal">Community</span>
+              <span class="tag">WhatsApp</span>
+              <span class="tag" style="background:rgba(212,195,179,0.15);color:#D4C3B3;border-color:rgba(212,195,179,0.3);">Jan. 2025</span>
+            </div>
+            <h2 class="project-card__title">Animation de Communauté · 500+ membres</h2>
+            <p class="project-card__desc">Gestion quotidienne d'une communauté de 500+ membres sur 6 mois : modération,
+              animations thématiques, fidélisation et réduction du taux de désabonnement de 35%.</p>
+            <a href="community.html" class="project-card__link">
+              Voir l'étude de cas
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="section" style="background:var(--clr-surface);text-align:center;">
+    <div class="section__inner">
+      <h2 class="section__title reveal" style="max-width:500px;margin:0 auto var(--sp-3);">Votre projet pourrait être le
+        prochain</h2>
+      <p class="reveal" style="color:var(--clr-muted);max-width:400px;margin:0 auto var(--sp-6);" data-delay="100">
+        Discutons de votre marque et de ce qu'on peut construire ensemble.</p>
+      <a href="contact.html" class="btn btn-primary reveal" data-delay="200">Me contacter</a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand-name">Hervé KAKPO<span style="color:var(--clr-accent)">.</span></div>
+        <p class="footer__brand-desc">Community Manager hybride tech &amp; créatif basé à Lomé.</p>
+        <div class="footer__socials">
+
+          <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+          <a href="mailto:herve.biovakakpo@kakpo.com" class="social-link" aria-label="Email">@</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__heading">Navigation</div>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="void.html">VOID</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <ul class="footer__links">
+          <li><a href="mailto:herve.biovakakpo@kakpo.com">herve.biovakakpo@kakpo.com</a></li>
+
+          <li><a href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom" style="max-width:1200px;margin:0 auto;">
+      <span>© 2026 Hervé KAKPO · Community Manager</span>
+      <span>Lomé, Togo 🇹🇬</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

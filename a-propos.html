@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos — Hervé KAKPO · Community Manager Lomé</title>
+  <meta name="description" content="Qui est Hervé KAKPO ? CM hybride tech & créatif basé à Lomé — sa démarche, ses outils, ses valeurs et comment il intègre l'IA dans son workflow." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .timeline {
+      position: relative;
+      padding-left: var(--sp-6);
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, var(--clr-accent), transparent);
+    }
+    .timeline__item {
+      position: relative;
+      padding-bottom: var(--sp-6);
+    }
+    .timeline__item::before {
+      content: '';
+      position: absolute;
+      left: calc(-1 * var(--sp-6) - 4px);
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--clr-accent);
+      box-shadow: 0 0 12px rgba(123,95,255,0.5);
+    }
+    .timeline__date {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--clr-accent);
+      letter-spacing: 0.1em;
+      margin-bottom: var(--sp-1);
+    }
+    .timeline__title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: var(--sp-1);
+    }
+    .timeline__desc {
+      font-size: 0.875rem;
+      color: var(--clr-muted);
+      line-height: 1.6;
+    }
+
+    .ai-card {
+      background: linear-gradient(135deg, rgba(123,95,255,0.08), rgba(0,229,200,0.05));
+      border: 1px solid rgba(123,95,255,0.25);
+      border-radius: var(--r-xl);
+      padding: var(--sp-6);
+    }
+
+    .workflow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-4);
+      padding: var(--sp-4) 0;
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .workflow-step:last-child { border-bottom: none; }
+    .workflow-step__num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--clr-accent);
+      background: var(--clr-accent-soft);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+    .workflow-step__content h4 {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: var(--sp-1);
+    }
+    .workflow-step__content p {
+      font-size: 0.85rem;
+      color: var(--clr-muted);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav" id="navbar">
+  <a href="index.html" class="nav__logo">HK<span>.</span></a>
+  <ul class="nav__links">
+    <li><a href="index.html" class="nav__link">Accueil</a></li>
+    <li><a href="projets.html" class="nav__link">Projets</a></li>
+    <li><a href="a-propos.html" class="nav__link active">À propos</a></li>
+    <li><a href="contact.html" class="nav__link nav__cta">Me contacter</a></li>
+  </ul>
+  <button class="nav__burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ========== PAGE HERO ========== -->
+<div class="page-hero">
+  <div class="page-hero__inner">
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a>
+      <span>/</span>
+      <span style="color:var(--clr-text);">À propos</span>
+    </div>
+    <div class="section__label">À propos</div>
+    <h1 class="section__title" style="font-size:clamp(2.5rem,6vw,5rem);">
+      Qui suis-je ?
+    </h1>
+  </div>
+</div>
+
+<!-- ========== ABOUT MAIN ========== -->
+<section class="section" style="padding-top:0;">
+  <div class="section__inner">
+    <div class="about-grid">
+
+      <!-- LEFT — AVATAR CARD -->
+      <div class="avatar-card reveal">
+        <div style="position: relative; width: 140px; height: 140px; margin: 0 auto var(--sp-4);">
+          <div style="position: absolute; inset: -5px; border-radius: 50%; background: linear-gradient(135deg, var(--clr-accent), var(--clr-accent-2)); animation: pulse 3s infinite;"></div>
+          <img src="avatar.png" alt="Hervé KAKPO — Community Manager" class="avatar-img" style="position: relative; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 4px solid var(--clr-surface); z-index: 2;" />
+        </div>
+        <div class="avatar-name">Hervé KAKPO</div>
+        <div class="avatar-role">Community Manager</div>
+        <div class="avatar-location">Lomé, Togo · Disponible partout</div>
+
+        <div class="divider" style="margin:var(--sp-4) 0;"></div>
+
+        <div class="values-grid">
+          <div class="value-pill">Stratégie</div>
+          <div class="value-pill">Créativité</div>
+          <div class="value-pill">Données</div>
+          <div class="value-pill">Rigueur</div>
+          <div class="value-pill">IA</div>
+          <div class="value-pill">Impact</div>
+        </div>
+
+        <div style="margin-top:var(--sp-5); display:flex;gap:var(--sp-3);justify-content:center;">
+          <a href="#" class="btn btn-outline" style="font-size:0.8rem;padding:var(--sp-2) var(--sp-4);">LinkedIn</a>
+          <a href="contact.html" class="btn btn-primary" style="font-size:0.8rem;padding:var(--sp-2) var(--sp-4);">Contact</a>
+        </div>
+
+        <a href="#" style="display:flex;align-items:center;justify-content:center;gap:var(--sp-2);margin-top:var(--sp-3);font-size:0.8rem;color:var(--clr-muted);transition:color var(--t-fast);" onmouseover="this.style.color='var(--clr-text)'" onmouseout="this.style.color='var(--clr-muted)'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          Télécharger mon CV (PDF)
+        </a>
+      </div>
+
+      <!-- RIGHT — CONTENT -->
+      <div>
+        <div class="reveal">
+          <div class="section__label">Mon parcours</div>
+          <h2 style="font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:700;letter-spacing:-0.03em;margin-bottom:var(--sp-5);">
+            De la charte graphique<br>au calendrier éditorial
+          </h2>
+          <p style="font-size:1.05rem;line-height:1.8;color:var(--clr-muted);margin-bottom:var(--sp-4);">
+            Je suis Hervé KAKPO, Community Manager hybride tech & créatif basé à Lomé. Ce qui me rend différent ? 
+            Je ne me contente pas de publier du contenu — je <strong style="color:var(--clr-text);">pilote la marque de A à Z</strong> : 
+            identité visuelle, stratégie éditoriale, community management, analytics et automatisation IA.
+          </p>
+          <p style="font-size:1.05rem;line-height:1.8;color:var(--clr-muted);">
+            En 2026, j'intègre systématiquement les outils d'IA (ChatGPT, Claude, Midjourney) dans mon workflow 
+            pour produire plus vite sans sacrifier l'authenticité. Cette approche me permet de multiplier 
+            la productivité tout en gardant une voix de marque cohérente.
+          </p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- MES 3 VALEURS -->
+        <div class="reveal" data-delay="100">
+          <div class="section__label">Mes 3 valeurs</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);margin-top:var(--sp-4);">
+            <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--r-lg);padding:var(--sp-4);text-align:center;">
+              <div style="font-size:1.8rem;margin-bottom:var(--sp-2);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+              <div style="font-family:var(--font-display);font-size:0.95rem;font-weight:600;margin-bottom:var(--sp-1);">Résultats</div>
+              <div style="font-size:0.8rem;color:var(--clr-muted);">Chaque action est mesurée et optimisée</div>
+            </div>
+            <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--r-lg);padding:var(--sp-4);text-align:center;">
+              <div style="font-size:1.8rem;margin-bottom:var(--sp-2);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"/></svg></div>
+              <div style="font-family:var(--font-display);font-size:0.95rem;font-weight:600;margin-bottom:var(--sp-1);">Cohérence</div>
+              <div style="font-size:0.8rem;color:var(--clr-muted);">La marque doit être reconnue partout</div>
+            </div>
+            <div style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:var(--r-lg);padding:var(--sp-4);text-align:center;">
+              <div style="font-size:1.8rem;margin-bottom:var(--sp-2);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 11-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></div>
+              <div style="font-family:var(--font-display);font-size:0.95rem;font-weight:600;margin-bottom:var(--sp-1);">Adaptation</div>
+              <div style="font-size:0.8rem;color:var(--clr-muted);">S'adapter aux algorithmes et aux tendances</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- EXPÉRIENCES -->
+        <div class="reveal" data-delay="150">
+          <div class="section__label">Expériences</div>
+          <div class="timeline" style="margin-top:var(--sp-5);">
+            <div class="timeline__item">
+              <div class="timeline__date">2025 — Présent</div>
+              <div class="timeline__title">Community Manager Freelance</div>
+              <div class="timeline__desc">Gestion de 5+ comptes clients simultanément — Stratégie, création de contenu, analytics et branding pour des marques togolaises et de la sous-région.</div>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__date">2024 — 2025</div>
+              <div class="timeline__title">CM & Responsable Brand · Startup Fintech</div>
+              <div class="timeline__desc">Pilotage complet de la présence digitale : +2K abonnés en 4 mois, création de la charte graphique et mise en place du système de reporting mensuel.</div>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__date">Début 2024</div>
+              <div class="timeline__title">Social Media Manager · Agence Digitale</div>
+              <div class="timeline__desc">Gestion de 8 comptes clients multi-secteurs. Spécialisation : formats Reels/Stories et stratégie de contenu viral.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== IA & WORKFLOW ========== -->
+<section class="section" style="background:var(--clr-surface);">
+  <div class="section__inner">
+    <div class="section__label">IA & Automatisation</div>
+    <h2 class="section__title reveal">Comment j'intègre<br>l'IA dans mon workflow</h2>
+    <p class="reveal" style="color:var(--clr-muted);max-width:550px;margin-bottom:var(--sp-6);" data-delay="100">
+      En 2026, ignorer l'IA dans un workflow CM = signal d'obsolescence. Voici comment je l'intègre intelligemment à chaque étape.
+    </p>
+
+    <div class="ai-card reveal" data-delay="150">
+      <div class="workflow-step">
+        <div class="workflow-step__num">01</div>
+        <div class="workflow-step__content">
+          <h4>Idéation & Stratégie</h4>
+          <p>Claude & ChatGPT pour le brainstorming de contenu, l'analyse des tendances et la génération de calendriers éditoriaux en quelques minutes.</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step__num">02</div>
+        <div class="workflow-step__content">
+          <h4>Création visuelle</h4>
+          <p>Midjourney & Ideogram pour les concepts visuels, les moodboards et les variations d'assets. Canva pour l'exécution finale sur-brand.</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step__num">03</div>
+        <div class="workflow-step__content">
+          <h4>Rédaction & Copywriting</h4>
+          <p>IA pour la première ébauche, humain pour l'authenticité et la voix de marque. Ratio : 30% IA + 70% révision créative.</p>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step__num">04</div>
+        <div class="workflow-step__content">
+          <h4>Analytics & Optimisation</h4>
+          <p>Scripts Python pour l'automatisation des rapports, Google Analytics pour le suivi et GPT-4 pour l'interprétation des données et les recommandations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== OUTILS ========== -->
+<section class="section">
+  <div class="section__inner">
+    <div class="section__label">Stack & méthodes</div>
+    <h2 class="section__title reveal">Mes outils<br>au quotidien</h2>
+
+    <div class="tools-grid" style="margin-top:var(--sp-6);">
+      <div class="tool-chip reveal" data-delay="0">Canva</div>
+      <div class="tool-chip reveal" data-delay="40">Meta Suite</div>
+      <div class="tool-chip reveal" data-delay="80">Buffer</div>
+      <div class="tool-chip reveal" data-delay="120">Google Analytics</div>
+      <div class="tool-chip reveal" data-delay="160">Notion</div>
+      <div class="tool-chip reveal" data-delay="200">CapCut</div>
+      <div class="tool-chip reveal" data-delay="240">ChatGPT</div>
+      <div class="tool-chip reveal" data-delay="280">Claude</div>
+      <div class="tool-chip reveal" data-delay="320">Midjourney</div>
+      <div class="tool-chip reveal" data-delay="360">Python</div>
+      <div class="tool-chip reveal" data-delay="400">Mailchimp</div>
+      <div class="tool-chip reveal" data-delay="440">Hootsuite</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="section" style="background:var(--clr-surface);text-align:center;">
+  <div class="section__inner">
+    <h2 class="section__title reveal" style="max-width:500px;margin:0 auto var(--sp-3);">Travaillons ensemble</h2>
+    <p class="reveal" style="color:var(--clr-muted);max-width:400px;margin:0 auto var(--sp-6);" data-delay="100">Disponible pour de nouvelles missions freelance dès maintenant.</p>
+    <div class="flex flex-center gap-4 reveal" data-delay="200">
+      <a href="contact.html" class="btn btn-primary">Me contacter</a>
+      <a href="projets.html" class="btn btn-outline">Voir mes projets</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand-name">Hervé KAKPO<span style="color:var(--clr-accent)">.</span></div>
+      <p class="footer__brand-desc">Community Manager hybride tech &amp; créatif basé à Lomé.</p>
+      <div class="footer__socials">
+        
+        <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+        <a href="mailto:herve.biovakakpo@kakpo.com" class="social-link" aria-label="Email">@</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__heading">Navigation</div>
+      <ul class="footer__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="void.html">VOID</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer__heading">Contact</div>
+      <ul class="footer__links">
+        <li><a href="mailto:herve.biovakakpo@kakpo.com">herve.biovakakpo@kakpo.com</a></li>
+        
+        <li><a href="#">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom" style="max-width:1200px;margin:0 auto;">
+    <span>© 2026 Hervé KAKPO · Community Manager</span>
+    <span>Lomé, Togo 🇹🇬</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page introuvable · Hervé KAKPO</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .glitch {
+      position: relative;
+    }
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      background: var(--clr-bg);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .glitch::before {
+      left: 2px;
+      text-shadow: -2px 0 var(--clr-accent-3);
+      clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+      animation: glitch-1 3s infinite linear alternate-reverse;
+    }
+    .glitch::after {
+      left: -2px;
+      text-shadow: 2px 0 var(--clr-accent-2);
+      clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+      animation: glitch-2 3s infinite linear alternate-reverse;
+    }
+    @keyframes glitch-1 {
+      0%   { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); transform: translate(-2px); }
+      20%  { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); transform: translate(2px); }
+      40%  { clip-path: polygon(0 35%, 100% 35%, 100% 38%, 0 38%); transform: translate(-1px); }
+      60%  { clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%); transform: translate(1px); }
+      80%  { clip-path: polygon(0 80%, 100% 80%, 100% 82%, 0 82%); transform: translate(-2px); }
+      100% { clip-path: polygon(0 90%, 100% 90%, 100% 92%, 0 92%); transform: translate(2px); }
+    }
+    @keyframes glitch-2 {
+      0%   { clip-path: polygon(0 65%, 100% 65%, 100% 68%, 0 68%); transform: translate(2px); }
+      30%  { clip-path: polygon(0 70%, 100% 70%, 100% 73%, 0 73%); transform: translate(-2px); }
+      60%  { clip-path: polygon(0 75%, 100% 75%, 100% 78%, 0 78%); transform: translate(1px); }
+      100% { clip-path: polygon(0 85%, 100% 85%, 100% 88%, 0 88%); transform: translate(-1px); }
+    }
+
+    .suggestions {
+      display: flex;
+      gap: var(--sp-3);
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: var(--sp-6);
+    }
+    .suggestion-link {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-3) var(--sp-4);
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-md);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all var(--t-fast) var(--ease);
+    }
+    .suggestion-link:hover {
+      border-color: var(--clr-accent);
+      color: var(--clr-accent);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav" id="navbar">
+  <a href="index.html" class="nav__logo">HK<span>.</span></a>
+  <ul class="nav__links">
+    <li><a href="index.html" class="nav__link">Accueil</a></li>
+    <li><a href="projets.html" class="nav__link">Projets</a></li>
+    <li><a href="a-propos.html" class="nav__link">À propos</a></li>
+    <li><a href="contact.html" class="nav__link nav__cta">Me contacter</a></li>
+  </ul>
+  <button class="nav__burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ========== 404 ========== -->
+<div class="not-found">
+  <div class="not-found__number glitch" data-text="404" style="position:relative;">404</div>
+
+  <h1 class="not-found__title">Cette page est dans le <span style="color:var(--clr-accent);">VOID</span></h1>
+  <p style="color:var(--clr-muted);max-width:420px;margin:0 auto var(--sp-4);">
+    La page que vous cherchez n'existe pas ou a été déplacée. Voici où je peux vous rediriger :
+  </p>
+
+  <a href="index.html" class="btn btn-primary" style="margin-bottom:var(--sp-5);">
+    ← Retour à l'accueil
+  </a>
+
+  <div class="suggestions">
+    <a href="projets.html" class="suggestion-link">
+      <span>🗂️</span> Voir mes projets
+    </a>
+    <a href="void.html" class="suggestion-link">
+      <span>⬛</span> Étude de cas VOID
+    </a>
+    <a href="a-propos.html" class="suggestion-link">
+      <span>👤</span> À propos
+    </a>
+    <a href="contact.html" class="suggestion-link">
+      <span>✉️</span> Me contacter
+    </a>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
+
