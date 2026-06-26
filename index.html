@@ -295,50 +295,54 @@
 <script>
   const loader = document.getElementById('astral-loader');
   
-  // Si on vient du bouton retour (ex: index.html?skip=true ou index.html#home)
-  // On masque immédiatement le loader
-  if (window.location.search.includes('skip') || window.location.hash) {
+  // On masque le loader si :
+  // 1. On a un hash/ancre (#projets, #services…) → retour depuis une page
+  // 2. On a ?skip dans l'URL → retour explicite
+  // 3. Le loader a déjà été vu dans cette session (sessionStorage)
+  const alreadySeen = sessionStorage.getItem('loader_seen');
+  const hasHash = window.location.hash && window.location.hash.length > 1;
+  const hasSkip = window.location.search.includes('skip');
+
+  if (alreadySeen || hasHash || hasSkip) {
     loader.style.display = 'none';
     loader.remove();
+    // Si ancre, scroll vers la section cible
+    if (hasHash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 100);
+    }
   } else {
-    // Mode normal avec loader
+    // Première visite : afficher le loader
     document.body.classList.add('loading');
     
     const content1 = document.getElementById('astral-content-1');
     const content2 = document.getElementById('astral-content-2');
     let isClicked = false;
     
-    // Masquer le loader au clic
     loader.addEventListener('click', () => {
       if (isClicked) return;
       isClicked = true;
       
-      // Transition : l'image disparait
       content1.style.opacity = '0';
       content1.style.transform = 'scale(0.8) translateY(-30px)';
       
-      // Accélérer les étoiles (transition étoilée)
       document.querySelector('.stars').style.animationDuration = '15s';
       document.querySelector('.stars2').style.animationDuration = '25s';
       
       setTimeout(() => {
         content1.style.display = 'none';
-        
-        // La phrase apparait
         content2.classList.remove('hidden-content');
         
-        // 5 secondes après l'apparition du texte, on accède à l'accueil
         setTimeout(() => {
           loader.classList.add('hidden');
           document.body.classList.remove('loading');
+          // Marquer comme vu pour cette session
+          sessionStorage.setItem('loader_seen', '1');
           
-          // Nettoyage DOM
-          setTimeout(() => {
-            loader.remove();
-          }, 1000);
+          setTimeout(() => { loader.remove(); }, 1000);
         }, 5000);
         
-      }, 800); // Attend la fin de disparition de l'image
+      }, 800);
     });
   }
 </script>
