@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CV — KAKPO Hervé</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+      color: #2c2c2c;
+      font-size: 10.5pt;
+      line-height: 1.45;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+      color: #e8e8e8;
+      padding: 28px 22px;
+    }
+
+    .sidebar h1 {
+      color: #fff;
+      font-size: 17pt;
+      line-height: 1.15;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .sidebar .title {
+      color: #f5a623;
+      font-size: 10pt;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .sidebar .status {
+      display: inline-block;
+      background: #2ecc71;
+      color: #fff;
+      font-size: 8pt;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-top: 6px;
+      margin-bottom: 18px;
+    }
+
+    .sidebar .section {
+      margin-bottom: 18px;
+    }
+
+    .sidebar .section-title {
+      color: #f5a623;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(245, 166, 35, .4);
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+
+    .sidebar .contact-item {
+      font-size: 9.5pt;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      word-break: break-word;
+    }
+
+    .sidebar .contact-item .ico {
+      color: #f5a623;
+      flex-shrink: 0;
+    }
+
+    .sidebar .contact-item a {
+      color: #e8e8e8;
+      text-decoration: none;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      background: rgba(245, 166, 35, .15);
+      color: #f5a623;
+      border: 1px solid rgba(245, 166, 35, .3);
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 8.5pt;
+      margin: 2px 2px 2px 0;
+    }
+
+    .tool-list {
+      list-style: none;
+      font-size: 9pt;
+    }
+
+    .tool-list li {
+      padding: 2px 0;
+      color: #d0d0d0;
+    }
+
+    .tool-list li::before {
+      content: "▸ ";
+      color: #f5a623;
+    }
+
+    .sector-list {
+      font-size: 9pt;
+      color: #d0d0d0;
+      line-height: 1.6;
+    }
+
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9pt;
+      padding: 3px 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, .1);
+    }
+
+    .lang-row span:last-child {
+      color: #f5a623;
+      font-style: italic;
+      font-size: 8.5pt;
+    }
+
+    .soft-list {
+      list-style: none;
+      font-size: 9pt;
+    }
+
+    .soft-list li {
+      padding: 3px 0;
+      color: #d0d0d0;
+      padding-left: 12px;
+      position: relative;
+    }
+
+    .soft-list li::before {
+      content: "◆";
+      position: absolute;
+      left: 0;
+      color: #f5a623;
+      font-size: 7pt;
+      top: 5px;
+    }
+
+    /* ===== MAIN ===== */
+    .main {
+      padding: 28px 32px;
+    }
+
+    .main .section {
+      margin-bottom: 18px;
+    }
+
+    .main .section-title {
+      color: #1a1a2e;
+      font-size: 12pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 2px solid #f5a623;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .main .section-title::before {
+      content: "";
+      width: 6px;
+      height: 18px;
+      background: #f5a623;
+      display: inline-block;
+    }
+
+    .profile-text {
+      font-size: 10pt;
+      line-height: 1.55;
+      color: #333;
+      text-align: justify;
+    }
+
+    .exp {
+      margin-bottom: 14px;
+      page-break-inside: avoid;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .exp-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .exp-date {
+      font-size: 9pt;
+      color: #f5a623;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .exp-company {
+      font-size: 9.5pt;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+
+    .exp-tags {
+      margin-bottom: 6px;
+    }
+
+    .exp-tag {
+      display: inline-block;
+      background: #f0f0f0;
+      color: #555;
+      font-size: 8pt;
+      padding: 1px 6px;
+      border-radius: 2px;
+      margin-right: 3px;
+    }
+
+    .exp-kpis {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+
+    .kpi {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 9pt;
+      text-align: center;
+      flex: 1;
+      min-width: 90px;
+    }
+
+    .kpi .num {
+      display: block;
+      color: #f5a623;
+      font-size: 12pt;
+      font-weight: 700;
+    }
+
+    .kpi .lbl {
+      font-size: 7.5pt;
+      opacity: .85;
+    }
+
+    .exp ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .exp ul li {
+      font-size: 9.5pt;
+      padding: 2px 0 2px 14px;
+      position: relative;
+      color: #333;
+    }
+
+    .exp ul li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #f5a623;
+      font-weight: 700;
+    }
+
+    .exp ul li strong {
+      color: #1a1a2e;
+    }
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .wf-item {
+      background: #f9f9f9;
+      border-left: 3px solid #f5a623;
+      padding: 6px 10px;
+      font-size: 9pt;
+    }
+
+    .wf-item strong {
+      color: #1a1a2e;
+    }
+
+    .wf-ratio {
+      grid-column: span 2;
+      background: #1a1a2e;
+      color: #fff;
+      text-align: center;
+      padding: 6px;
+      border-radius: 3px;
+      font-size: 9pt;
+    }
+
+    .wf-ratio strong {
+      color: #f5a623;
+    }
+
+    .project {
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      page-break-inside: avoid;
+    }
+
+    .proj-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .proj-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .proj-date {
+      font-size: 8.5pt;
+      color: #f5a623;
+      font-weight: 600;
+    }
+
+    .proj-sub {
+      font-size: 8.5pt;
+      color: #888;
+      font-style: italic;
+      margin-bottom: 5px;
+    }
+
+    .proj-tags {
+      margin-bottom: 4px;
+    }
+
+    .formation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .form-item {
+      background: #f9f9f9;
+      padding: 8px 10px;
+      border-radius: 3px;
+      border-left: 3px solid #f5a623;
+    }
+
+    .form-item .degree {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .form-item .school {
+      font-size: 8.5pt;
+      color: #666;
+      font-style: italic;
+    }
+
+    .form-item .date {
+      font-size: 8pt;
+      color: #f5a623;
+      font-weight: 600;
+    }
+
+    .proj-acad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .proj-acad-item {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      padding: 6px 8px;
+      border-radius: 3px;
+      font-size: 8.5pt;
+    }
+
+    .proj-acad-item strong {
+      display: block;
+      color: #1a1a2e;
+      font-size: 9pt;
+      margin-bottom: 2px;
+    }
+
+    .proj-acad-item span {
+      color: #888;
+      font-size: 7.5pt;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+    }
+
+    .value-item {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #fff;
+      padding: 8px 6px;
+      border-radius: 3px;
+      text-align: center;
+      font-size: 8pt;
+    }
+
+    .value-item .emoji {
+      display: block;
+      font-size: 14pt;
+      margin-bottom: 2px;
+    }
+
+    .value-item strong {
+      color: #f5a623;
+      display: block;
+      font-size: 8.5pt;
+    }
+
+    /* Bouton retour (ajout spécifique web) */
+    @media screen {
+      .back-btn-cv {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        background: #1a1a2e;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 14px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: background 0.3s;
+        z-index: 1000;
+      }
+
+      .back-btn-cv:hover {
+        background: #f5a623;
+      }
+    }
+
+    @media print {
+      .back-btn-cv {
+        display: none;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .page {
+        box-shadow: none;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="back-btn-cv">← Retour au portfolio</a>
+  <div class="page">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar">
+      <h1>KAKPO<br>Hervé</h1>
+      <div class="title">Community Manager</div>
+      <span class="status">● Disponible · Freelance</span>
+
+      <div class="section">
+        <div class="section-title">Contact</div>
+        <div class="contact-item"><span class="ico">✆</span> +228 79 81 81 78</div>
+        <div class="contact-item"><span class="ico">✉</span> herve.biovakakpo@kakpo.com</div>
+        <div class="contact-item"><span class="ico">⌖</span> Lomé, Togo · Disponible partout</div>
+        <div class="contact-item"><span class="ico">◈</span> <a
+            href="https://argherve.github.io/CM-portfolio">argherve.github.io/CM-portfolio</a></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Compétences CM</div>
+        <div style="margin-bottom: 4px;">
+          <span class="skill-tag">Stratégie éditoriale</span>
+          <span class="skill-tag">Community Building</span>
+          <span class="skill-tag">Branding</span>
+          <span class="skill-tag">Charte graphique</span>
+          <span class="skill-tag">Calendrier éditorial</span>
+          <span class="skill-tag">Analyse KPIs</span>
+          <span class="skill-tag">Reporting</span>
+          <span class="skill-tag">Email marketing</span>
+          <span class="skill-tag">Copywriting</span>
+          <span class="skill-tag">Modération</span>
+          <span class="skill-tag">E-réputation</span>
+          <span class="skill-tag">Gestion de crise</span>
+          <span class="skill-tag">A/B Testing</span>
+          <span class="skill-tag">Veille numérique</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Outils & Stack</div>
+        <ul class="tool-list">
+          <li>Meta Business Suite</li>
+          <li>Canva · Adobe Express</li>
+          <li>ChatGPT · Claude IA</li>
+          <li>Midjourney · Ideogram</li>
+          <li>Buffer · Hootsuite</li>
+          <li>Google Analytics 4</li>
+          <li>Mailchimp</li>
+          <li>Notion · Trello</li>
+          <li>CapCut · Reels</li>
+          <li>Python · Git</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Secteurs</div>
+        <div class="sector-list">
+          Tech & Startups · Fintech<br>
+          Éducation · Télécom<br>
+          Afrique de l'ouest<br>
+          ONG / Institutionnel
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Langues</div>
+        <div class="lang-row"><span>Français</span><span>Natif</span></div>
+        <div class="lang-row"><span>Anglais</span><span>Courant </span></div>
+        <div class="lang-row"><span>Adja-Éwé</span><span>Natif</span></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Soft Skills</div>
+        <ul class="soft-list">
+          <li>Prise de parole & animation</li>
+          <li>Pensée stratégique & data-driven</li>
+          <li>Écoute active, empathie</li>
+          <li>Rigueur & autonomie</li>
+          <li>Adaptabilité aux tendances</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <main class="main">
+
+      <!-- PROFIL -->
+      <div class="section">
+        <div class="section-title">Profil</div>
+        CM hybride tech & créatif, je pilote la marque de A à Z — identité visuelle, stratégie éditoriale, community
+        management et analytics. Spécialisé dans les marques digitales en Afrique de l'ouest, je transforme des sujets
+        complexes en contenus qui engagent. Actuellement CM freelance sur <strong>5+ comptes simultanés</strong>, avec
+        un workflow optimisé pour maximiser l'impact sans sacrifier l'authenticité de marque.
+        </p>
+      </div>
+
+
+
+      <!-- EXPÉRIENCES -->
+      <div class="section">
+        <div class="section-title">Expérience</div>
+
+        <div class="exp">
+          <div class="exp-header">
+            <div class="exp-title">Community Manager Freelance</div>
+            <div class="exp-date">2025 – Présent</div>
+          </div>
+          <div class="exp-company">Clients multi-secteurs — Togo</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Stratégie éditoriale</span>
+            <span class="exp-tag">Branding</span>
+            <span class="exp-tag">Analytics</span>
+            <span class="exp-tag">Multi-comptes</span>
+            <span class="exp-tag">Création de contenu</span>
+          </div>
+          <div class="exp-kpis">
+            <div class="kpi"><span class="num">5+</span><span class="lbl">Comptes simultanés</span></div>
+
+            <div class="kpi"><span class="num">42%</span><span class="lbl">Taux ouverture email</span></div>
+            <div class="kpi"><span class="num">+2.5K</span><span class="lbl">Abonnés en 4 mois</span></div>
+          </div>
+          <ul>
+            <li>Gestion stratégique de <strong>5+ comptes clients</strong> — stratégie, création, analytics et branding
+              pour des marques togolaises et sous-régionales</li>
+
+            <li><strong>Campagne email</strong> (5 mails, Mailchimp) : 42% d'ouverture — 2× la moyenne secteur —
+              copywriting, segmentation, A/B testing</li>
+            <li><strong>Startup Brand :</strong> +2 500 abonnés en 4 mois, charte graphique complète et reporting
+              mensuel client</li>
+          </ul>
+        </div>
+
+        <div class="exp">
+          <div class="exp-header">
+            <div class="exp-title">Responsable Community & Animateur Tech</div>
+            <div class="exp-date">2024 – 2026</div>
+          </div>
+          <div class="exp-company">Tech Alliance — Association étudiante · Lomé Business School</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Calendrier éditorial</span>
+            <span class="exp-tag">KPIs & Reporting</span>
+            <span class="exp-tag">500+ membres</span>
+            <span class="exp-tag">Événementiel</span>
+          </div>
+          <ul>
+            <li>Animation quotidienne d'une communauté de <strong>500+ membres</strong> (WhatsApp & réseaux) —
+              modération, animations thématiques, <strong>réduction du désabonnement de 35%</strong></li>
+            <li>Production d'un <strong>calendrier éditorial mensuel</strong> complet (posts, stories, lives) — suivi
+              KPIs et reporting hebdomadaire</li>
+            <li>Coordination de <strong>3+ événements institutionnels</strong> majeurs</li>
+          </ul>
+        </div>
+
+        <div class="exp">
+          <div class="exp-header">
+            <div class="exp-title">Conseiller Client & Agent Commercial</div>
+            <div class="exp-date">Juil. – Sept. 2024</div>
+          </div>
+          <div class="exp-company">MOOV AFRICA — Kara, Togo</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Relation Client</span>
+            <span class="exp-tag">Formation utilisateurs</span>
+            <span class="exp-tag">50+ clients/jour</span>
+          </div>
+          <ul>
+            <li>Accompagnement de <strong>50+ clients/jour</strong> — taux de résolution premier contact <strong>&gt;
+                80%</strong></li>
+            <li>Formation aux services numériques et <strong>remontées terrain UX</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PROJETS -->
+      <div class="section">
+        <div class="section-title">Projets & Études de cas</div>
+
+        <div class="project">
+          <div class="proj-header">
+            <div class="proj-title">VOID — Direction artistique personnelle</div>
+            <div class="proj-date">En cours · 2026</div>
+          </div>
+          <div class="proj-sub">Branding premium · Charte graphique complète</div>
+          <div class="proj-tags">
+            <span class="exp-tag">Logo × 6 déclinaisons</span>
+            <span class="exp-tag">Guide 24 pages</span>
+          </div>
+          <ul style="list-style:none; padding:0; font-size:9pt;">
+            <li style="padding:2px 0;">▸ Identité visuelle complète : logo, palette, typographies, iconographie, guide
+              de marque 24 pages</li>
+            <li style="padding:2px 0;">▸ Templates posts/stories/bannières — univers minimaliste haut de gamme —
+              déclinaisons digitales & print</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="proj-header">
+            <div class="proj-title">Planning Éditorial · Système Notion</div>
+            <div class="proj-date">Mars. 2026</div>
+          </div>
+          <div class="proj-sub">Workflow client · Notion Editorial</div>
+          <div class="proj-tags">
+            <span class="exp-tag">3 mois de contenu</span>
+            <span class="exp-tag">KPIs temps réel</span>
+          </div>
+          <ul style="list-style:none; padding:0; font-size:9pt;">
+            <li style="padding:2px 0;">▸ Système Notion complet : calendrier 3 mois, briefs, workflow de validation,
+              suivi KPIs en temps réel</li>
+            <li style="padding:2px 0;">▸ Livrable clé-en-main adopté par le client — modèle réutilisé sur tous les
+              comptes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FORMATION -->
+      <div class="section">
+        <div class="section-title">Formation</div>
+        <div class="formation-grid">
+          <div class="form-item">
+            <div class="degree">Licence 2 Systèmes d'Information</div>
+            <div class="school">Lomé Business School</div>
+            <div class="date">Oct. 2025</div>
+          </div>
+          <div class="form-item">
+            <div class="degree">Licence 1 Systèmes d'Information</div>
+            <div class="school">Lomé Business School</div>
+            <div class="date">Oct. 2024</div>
+          </div>
+        </div>
+        <div class="proj-acad">
+          <div class="proj-acad-item">
+            <strong>EasyPass</strong>
+            <span>Projet tech · Solution digitale</span>
+          </div>
+          <div class="proj-acad-item">
+            <strong>Smart City Dashboard</strong>
+            <span>Groupe SuitFlow · 2025</span>
+          </div>
+          <div class="proj-acad-item">
+            <strong>Social Media Mgr</strong>
+            <span>Agence digitale · 8 comptes · 2024</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- VALEURS -->
+      <div class="section">
+        <div class="section-title">Valeurs & Intérêts</div>
+        <div class="values-grid">
+          <div class="value-item"><strong>Résultats</strong>mesurés</div>
+          <div class="value-item"><strong>Cohérence</strong>visuelle</div>
+          <div class="value-item"><strong>Adaptation</strong>algo</div>
+          <div class="value-item"><strong>Photo</strong>& Storytelling</div>
+          <div class="value-item"><strong>Veille</strong>& Innovation</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</body>
+
+</html>
