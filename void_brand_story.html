@@ -1,36 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Story — VØID</title>
+  <meta name="description" content="L'histoire fondatrice et le manifeste de la marque VØID — née d'une vision, imposée par une identité." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
-  .wrap { padding: 1rem 0; }
-  .hero { background: #0a0a0a; border-radius: var(--border-radius-lg); padding: 2.5rem 2rem; margin-bottom: 1.5rem; text-align: center; }
-  .hero-eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #444; margin-bottom: 1rem; }
-  .hero-title { font-size: 48px; font-weight: 500; letter-spacing: 0.15em; color: #fff; margin-bottom: 0.5rem; }
-  .hero-tagline { font-size: 13px; letter-spacing: 0.2em; color: #555; text-transform: uppercase; }
+    :root {
+      --bg:            #111113;
+      --bg-secondary:  #1A1A1E;
+      --text-primary:  #F5F3FF;
+      --text-secondary:#A09EB5;
+      --text-tertiary: #6B697E;
+      --border:        rgba(255,255,255,0.08);
+      --border-subtle: rgba(255,255,255,0.04);
+      --accent:        #C9915A;
+      --r-sm:          6px;
+      --r-md:          10px;
+      --r-lg:          16px;
+    }
 
-  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.5rem 0; }
-  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 1rem; }
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
 
-  .chapter { margin-bottom: 1.5rem; }
-  .chapter-num { font-size: 11px; letter-spacing: 0.15em; color: var(--color-text-tertiary); margin-bottom: 0.4rem; }
-  .chapter-title { font-size: 18px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 0.75rem; }
-  .chapter-body { font-size: 14px; color: var(--color-text-secondary); line-height: 1.8; }
-  .chapter-body em { color: var(--color-text-primary); font-style: normal; font-weight: 500; }
+    /* ——— Back button ——— */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 0.03em;
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      background: rgba(255,255,255,0.1);
+      color: var(--text-primary);
+    }
 
-  .quote-block { background: #0a0a0a; border-radius: var(--border-radius-md); padding: 1.5rem; margin: 1.5rem 0; border-left: 2px solid #333; }
-  .quote-text { font-size: 15px; font-weight: 500; color: #fff; line-height: 1.6; font-style: italic; letter-spacing: 0.02em; }
-  .quote-attr { font-size: 11px; color: #444; margin-top: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    /* ——— Page layout ——— */
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 24px 100px;
+    }
 
-  .manifeste { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1.5rem; }
-  .manifeste-line { font-size: 14px; color: var(--color-text-primary); line-height: 2; letter-spacing: 0.02em; padding: 0.25rem 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
-  .manifeste-line:last-child { border-bottom: none; }
+    /* ——— Hero ——— */
+    .hero {
+      background: #0a0a0c;
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 48px 32px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 56px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .hero-tagline {
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+    }
 
-  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1.5rem; }
-  .btn-row button { flex: 1; min-width: 160px; padding: 10px; font-size: 13px; font-weight: 500; cursor: pointer; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-secondary); background: transparent; color: var(--color-text-primary); }
-  .btn-row button:hover { background: var(--color-background-secondary); }
-</style>
+    /* ——— Divider ——— */
+    .divider {
+      border: none;
+      border-top: 0.5px solid var(--border);
+      margin: 32px 0;
+    }
 
-<h2 class="sr-only">Histoire et manifeste de la marque VØID</h2>
+    /* ——— Section label ——— */
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+    }
 
-<div class="wrap">
+    /* ——— Chapter ——— */
+    .chapter {
+      margin-bottom: 32px;
+    }
+    .chapter-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .chapter-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .chapter-body {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+    }
+    .chapter-body em {
+      color: var(--text-primary);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    /* ——— Quote ——— */
+    .quote-block {
+      background: #0a0a0c;
+      border-radius: var(--r-md);
+      padding: 24px;
+      margin: 32px 0;
+      border-left: 2px solid var(--accent);
+    }
+    .quote-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-style: italic;
+      letter-spacing: 0.01em;
+    }
+    .quote-attr {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      margin-top: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ——— Manifeste ——— */
+    .manifeste {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+    .manifeste-line {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      color: var(--text-primary);
+      line-height: 1.9;
+      letter-spacing: 0.01em;
+      padding: 14px 20px;
+      border-bottom: 0.5px solid var(--border-subtle);
+      transition: background 0.15s;
+    }
+    .manifeste-line:last-child {
+      border-bottom: none;
+    }
+    .manifeste-line:hover {
+      background: rgba(201, 145, 90, 0.04);
+    }
+
+    /* ——— CTA buttons ——— */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .btn {
+      flex: 1;
+      min-width: 160px;
+      padding: 12px 16px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: var(--r-md);
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-primary);
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn:hover {
+      background: rgba(201, 145, 90, 0.1);
+      border-color: rgba(201, 145, 90, 0.4);
+      color: var(--accent);
+    }
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #0a0a0c;
+    }
+    .btn-primary:hover {
+      background: #d9a06a;
+      border-color: #d9a06a;
+      color: #0a0a0c;
+    }
+  </style>
+</head>
+<body>
+
+<a href="void.html" class="back-btn">← Retour à VØID</a>
+
+<div class="page">
 
   <div class="hero">
     <p class="hero-eyebrow">L'origine</p>
@@ -71,7 +287,7 @@
   </div>
 
   <div class="quote-block">
-    <p class="quote-text">"Je ne voulais pas créer une marque de plus. Je voulais créer un sentiment. Ce sentiment que tu as quand tu portes quelque chose que personne d'autre ne possède — et que tout le monde remarque sans savoir pourquoi."</p>
+    <p class="quote-text">« Je ne voulais pas créer une marque de plus. Je voulais créer un sentiment. Ce sentiment que tu as quand tu portes quelque chose que personne d'autre ne possède — et que tout le monde remarque sans savoir pourquoi. »</p>
     <p class="quote-attr">— Le Fondateur, VØID</p>
   </div>
 
@@ -90,12 +306,14 @@
 
   <hr class="divider">
 
-  <p class="section-label">Prochaine étape</p>
+  <p class="section-label">Navigation</p>
   <div class="btn-row">
-    <button onclick="sendPrompt('Crée un visuel Coming Soon pour VØID sur fond noir avec le logo et une phrase de teasing.')">Visuel Coming Soon ↗</button>
-    <button onclick="sendPrompt('Rédige le texte de présentation VØID pour la bio Instagram et la page about du site.')">Bio Instagram & site ↗</button>
-    <button onclick="sendPrompt('Conçois le certificat d\'unicité et le système de numérotation des pièces VØID.')">Certificat d'unicité ↗</button>
+    <a href="void.html" class="btn btn-primary">← Retour à l'étude de cas</a>
+    <a href="projets.html" class="btn">Voir tous les projets</a>
+    <a href="contact.html" class="btn">Démarrer un projet →</a>
   </div>
 
 </div>
 
+</body>
+</html>
